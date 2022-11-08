@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ECE_City",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ECE_City::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ECE_City-Debug-b4fb5d8af7e071d50e95.json",
+					"name" : "ECE_City",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/33616/OneDrive - Groupe INSEEC (POCE)/Documents/ING2/info/theorie des graphes/Projet/ECE-City/cmake-build-debug",
+		"source" : "C:/Users/33616/OneDrive - Groupe INSEEC (POCE)/Documents/ING2/info/theorie des graphes/Projet/ECE-City"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
