@@ -3,6 +3,6 @@ project(projet45 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(projet45 main.c fonction.c fonction.h)
+add_executable(projet45 main.c fonction.h fonction.c )
 
 target_link_libraries(projet45 -lmingw32 -lalleg44)
