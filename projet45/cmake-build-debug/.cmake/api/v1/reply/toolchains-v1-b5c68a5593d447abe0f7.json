@@ -10,16 +10,18 @@
 				{
 					"includeDirectories" : 
 					[
-						"C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
-						"C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
-						"C:/Program Files/CodeBlocks/MinGW/x86_64-w64-mingw32/include"
+						"C:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include",
+						"C:/MinGW/include",
+						"C:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed",
+						"C:/MinGW/x86_64-w64-mingw32/include"
 					],
 					"linkDirectories" : 
 					[
-						"C:/Program Files/CodeBlocks/MinGW/lib/gcc/x86_64-w64-mingw32/8.1.0",
-						"C:/Program Files/CodeBlocks/MinGW/lib/gcc",
-						"C:/Program Files/CodeBlocks/MinGW/x86_64-w64-mingw32/lib",
-						"C:/Program Files/CodeBlocks/MinGW/lib"
+						"C:/MinGW/lib/gcc/x86_64-w64-mingw32/11.2.0",
+						"C:/MinGW/lib/gcc",
+						"C:/MinGW/x86_64-w64-mingw32/lib",
+						"C:/MinGW/lib",
+						"/MinGW/lib"
 					],
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : 
@@ -28,6 +30,7 @@
 						"gcc",
 						"moldname",
 						"mingwex",
+						"kernel32",
 						"pthread",
 						"advapi32",
 						"shell32",
@@ -37,11 +40,12 @@
 						"mingw32",
 						"gcc",
 						"moldname",
-						"mingwex"
+						"mingwex",
+						"kernel32"
 					]
 				},
-				"path" : "C:/Program Files/CodeBlocks/MinGW/bin/gcc.exe",
-				"version" : "8.1.0"
+				"path" : "C:/MinGW/bin/gcc.exe",
+				"version" : "11.2.0"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -54,7 +58,7 @@
 			"compiler" : 
 			{
 				"implicit" : {},
-				"path" : "C:/Program Files/CodeBlocks/MinGW/bin/windres.exe"
+				"path" : "C:/MinGW/bin/windres.exe"
 			},
 			"language" : "RC",
 			"sourceFileExtensions" : 

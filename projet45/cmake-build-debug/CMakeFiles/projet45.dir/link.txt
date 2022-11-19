@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\projet45.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\projet45.dir/objects.a @CMakeFiles\projet45.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\projet45.dir/objects.a -Wl,--no-whole-archive -o projet45.exe -Wl,--out-implib,libprojet45.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\projet45.dir\linklibs.rsp
