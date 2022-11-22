@@ -200,6 +200,8 @@ void highlightCase(BITMAP* buffer){
             }
         }
     }
+    if(mouse_x > 920 && mouse_x < 940 && mouse_y > 32 && mouse_y < 52){
+        rect(buffer, 920, 30, 940, 50,makecol(255, 255, 0));}
 }
 
 void renderActions(BITMAP* buffer){
