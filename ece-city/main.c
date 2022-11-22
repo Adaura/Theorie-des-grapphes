@@ -33,8 +33,11 @@ int main() {
         fclose(fp); // close the file
     }
 
+    initRender();
+
     while (!key[KEY_ESC]) {
        render();
+       rest(40);
     }
 
     allegro_exit();
