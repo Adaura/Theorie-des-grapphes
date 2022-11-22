@@ -2,9 +2,14 @@
 #include "../simulation/simulation.h"
 #include <stdlib.h>
 #include <string.h>
+#include "error.h"
 
 int init = 0;
 struct World game;
+BITMAP *bufferMap;
+BITMAP *buffer;
+
+BITMAP *roadImage;
 
 void initWorld(){
     FILE *fp = fopen("../paris.txt", "r");
@@ -89,7 +94,8 @@ void renderWorld(BITMAP* buffer){
                 int y1 = j*CASE_Y;
                 int x2 = (i*CASE_X) + CASE_X;
                 int y2 = (j*CASE_Y) + CASE_Y;
-                rectfill(buffer, x1, y1, x2, y2, makecol(0, 0, 0));
+                blit(roadImage,buffer,0, 0, i*CASE_X, j*CASE_Y,20, 20);
+                //rectfill(buffer, x1, y1, x2, y2, makecol(255, 0, 0));
             }
         }
     }
@@ -123,15 +129,45 @@ void highlightCase(BITMAP* buffer){
     }
 }
 
-void render(){
-    BITMAP *buffer = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
-    if(init == 0){
-        initSim();
-        init = 1;
+void renderActions(BITMAP* buffer){
+    //Palette
+    rect(buffer, 910, 20, 1020, 600, makecol(255, 255, 0));
+
+    // Icône route
+    blit(roadImage,buffer,0, 0, 910 + 10, 20 + 10,20, 20);
+
+
+
+    //Scores
+    rect(buffer, 20, 710, 800, 760, makecol(255, 255, 0));
+}
+
+void loadAssets(){
+    roadImage = load_bitmap("../assets/route.bmp", NULL);
+    if (!roadImage){
+        allegro_message("pb route.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
     }
-    rectfill(buffer,0,0,SCREEN_WIDTH,SCREEN_HEIGH, makecol(0,0,0));
-    renderWorld(buffer);
-    renderGrid(buffer);
+}
+
+void initRender(){
+    loadAssets();
+    bufferMap = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
+    buffer = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
+    initSim();
+    init = 1;
+    rectfill(bufferMap,0,0,SCREEN_WIDTH,SCREEN_HEIGH, makecol(0,0,0));
+    renderWorld(bufferMap);
+    renderGrid(bufferMap);
+    renderActions(bufferMap);
+    //textout_ex(buffer,font,"A",100,65,makecol(120,200,255),0);
+    blit(bufferMap, screen, 0, 0, 0, 0, screen->w, screen->h);
+}
+
+void render(){
+    clear_bitmap(buffer);
+    blit(bufferMap, buffer, 0, 0, 0, 0, screen->w, screen->h);
     highlightCase(buffer);
     blit(buffer, screen, 0, 0, 0, 0, screen->w, screen->h);
 }
