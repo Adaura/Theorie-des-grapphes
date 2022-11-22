@@ -10,6 +10,9 @@ BITMAP *bufferMap;
 BITMAP *buffer;
 
 BITMAP *roadImage;
+BITMAP *houseImage;
+BITMAP *powerStationImage;
+BITMAP *waterTowerImage;
 
 void initWorld(){
     FILE *fp = fopen("../paris.txt", "r");
@@ -54,10 +57,25 @@ void initWorld(){
             game.level_2[i][j].type = EMPTY;
             printf("%c", loadedMap[i][j]);
             int isRoad = loadedMap[i][j] == 'r';
+            int isHouse = loadedMap[i][j] == 'h';
+            int isWaterTower = loadedMap[i][j] == 'w';
+            int isPowerStation = loadedMap[i][j] == 'e';
             if(isRoad == 1){
                 game.level0[i][j].type = ROAD;
                 game.level_1[i][j].type = WATER_PIPE;
                 game.level_2[i][j].type = ELECTRICITY_CABLE;
+            }else if(isHouse == 1){
+                game.level0[i][j].type = HOUSE;
+                game.level_1[i][j].type = EMPTY;
+                game.level_2[i][j].type = EMPTY;
+            }else if(isWaterTower == 1){
+                game.level0[i][j].type = WATER_TOWER;
+                game.level_1[i][j].type = EMPTY;
+                game.level_2[i][j].type = EMPTY;
+            }else if(isPowerStation == 1){
+                game.level0[i][j].type = POWER_STATION;
+                game.level_1[i][j].type = EMPTY;
+                game.level_2[i][j].type = EMPTY;
             }
         }
     }
@@ -76,26 +94,81 @@ void renderWorld(BITMAP* buffer){
         allegro_exit();
         exit(EXIT_FAILURE);
     }
+
+    int visited[GRID_NB_X][GRID_NB_Y];
     for (int i = 0; i < GRID_NB_X; i++)
     {
         for (int j = 0; j < GRID_NB_Y; j++)
         {
-            if(game.level0[i][j].type == EMPTY){
-                int x1 = i*CASE_X;
-                int y1 = j*CASE_Y;
-                int x2 = (i*CASE_X) + CASE_X;
-                int y2 = (j*CASE_Y) + CASE_Y;
-                //printf("Case (%d, %d) -> (%d, %d, %d, %d)\n", i, j, x1, y1, x2, y2);
-                rectfill(buffer, x1, y1, x2, y2, makecol(0, 255, 0));
-                //textprintf_ex(buffer,gfont,i*CASE_X + CASE_X/2,j*CASE_Y + CASE_Y/2,makecol(255,0,50),0,"(%d)",i);
-                //textout_ex(buffer,gfont,"A",100,65,makecol(120,200,255),0);
-            }else  if(game.level0[i][j].type == ROAD){
-                int x1 = i*CASE_X;
-                int y1 = j*CASE_Y;
-                int x2 = (i*CASE_X) + CASE_X;
-                int y2 = (j*CASE_Y) + CASE_Y;
-                blit(roadImage,buffer,0, 0, i*CASE_X, j*CASE_Y,20, 20);
-                //rectfill(buffer, x1, y1, x2, y2, makecol(255, 0, 0));
+            visited[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < GRID_NB_X; i++)
+    {
+        for (int j = 0; j < GRID_NB_Y; j++)
+        {
+            if(visited[i][j] == 0){
+                if(game.level0[i][j].type == EMPTY){
+                    int x1 = i*CASE_X;
+                    int y1 = j*CASE_Y;
+                    int x2 = (i*CASE_X) + CASE_X;
+                    int y2 = (j*CASE_Y) + CASE_Y;
+                    //printf("Case (%d, %d) -> (%d, %d, %d, %d)\n", i, j, x1, y1, x2, y2);
+                    rectfill(buffer, x1, y1, x2, y2, makecol(0, 255, 0));
+                    //textprintf_ex(buffer,gfont,i*CASE_X + CASE_X/2,j*CASE_Y + CASE_Y/2,makecol(255,0,50),0,"(%d)",i);
+                    //textout_ex(buffer,gfont,"A",100,65,makecol(120,200,255),0);
+                }else  if(game.level0[i][j].type == ROAD){
+                    int x1 = i*CASE_X;
+                    int y1 = j*CASE_Y;
+                    int x2 = (i*CASE_X) + CASE_X;
+                    int y2 = (j*CASE_Y) + CASE_Y;
+                    blit(roadImage,buffer,0, 0, i*CASE_X, j*CASE_Y,20, 20);
+                    //rectfill(buffer, x1, y1, x2, y2, makecol(255, 0, 0));
+                }else  if(game.level0[i][j].type == HOUSE){
+                    int x1 = i*CASE_X;
+                    int y1 = j*CASE_Y;
+                    for(int k = 0;k<3;k++){
+                        for(int d = 0;d<3;d++) {
+                            if (game.level0[i + k][j + d].type != HOUSE) {
+                                allegro_message("Maison invalide");
+                                allegro_exit();
+                                exit(EXIT_FAILURE);
+                            }
+                            visited[i + k][j + d] = 1;
+                        }
+                    }
+                    blit(houseImage,buffer,0, 0, x1, y1,60, 60);
+                }else  if(game.level0[i][j].type == WATER_TOWER){
+                    int x1 = i*CASE_X;
+                    int y1 = j*CASE_Y;
+                    for(int k = 0;k<4;k++){
+                        for(int d = 0;d<6;d++) {
+                            if (game.level0[i + k][j + d].type != WATER_TOWER) {
+                                allegro_message("WATER_TOWER invalide");
+                                allegro_exit();
+                                exit(EXIT_FAILURE);
+                            }
+                            visited[i + k][j + d] = 1;
+                        }
+                    }
+                    blit(waterTowerImage,buffer,0, 0, x1, y1,80, 120);
+                }else  if(game.level0[i][j].type == POWER_STATION){
+                    int x1 = i*CASE_X;
+                    int y1 = j*CASE_Y;
+                    for(int k = 0;k<4;k++){
+                        for(int d = 0;d<6;d++) {
+                            if (game.level0[i + k][j + d].type != POWER_STATION) {
+                                allegro_message("POWER_STATION invalide");
+                                allegro_exit();
+                                exit(EXIT_FAILURE);
+                            }
+                            visited[i + k][j + d] = 1;
+                        }
+                    }
+                    blit(powerStationImage,buffer,0, 0, x1, y1,80, 120);
+                }
+
+                visited[i][j] = 1;
             }
         }
     }
@@ -144,6 +217,9 @@ void renderActions(BITMAP* buffer){
 
 void loadAssets(){
     roadImage = load_bitmap("../assets/route.bmp", NULL);
+    houseImage = load_bitmap("../assets/maison.bmp", NULL);
+    powerStationImage = load_bitmap("../assets/centraleelectrique.bmp", NULL);
+    waterTowerImage = load_bitmap("../assets/waterTower.bmp", NULL);
     if (!roadImage){
         allegro_message("pb route.bmp");
         allegro_exit();
