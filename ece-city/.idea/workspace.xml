@@ -17,7 +17,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="" />
+    <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/cabane.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/cabane.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/caserne.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/caserne.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/centraleelectrique.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/centraleelectrique.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/maison.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/maison.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/waterTower.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/waterTower.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/render/render.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/render.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,13 +68,13 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.2/Theorie-des-grapphes/ece-city&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city&quot;
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="ece-city" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ece-city" TARGET_NAME="ece-city" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ece-city" RUN_TARGET_NAME="ece-city">
@@ -79,7 +92,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669064222964</updated>
       <workItem from="1669064224454" duration="2280000" />
-      <workItem from="1669160199586" duration="1000" />
+      <workItem from="1669160199586" duration="133000" />
+      <workItem from="1669196237829" duration="2687000" />
     </task>
     <servers />
   </component>

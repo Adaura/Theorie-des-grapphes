@@ -13,6 +13,7 @@ BITMAP *roadImage;
 BITMAP *houseImage;
 BITMAP *powerStationImage;
 BITMAP *waterTowerImage;
+BITMAP *fireStation;
 
 void initWorld(){
     FILE *fp = fopen("../paris.txt", "r");
@@ -122,7 +123,7 @@ void renderWorld(BITMAP* buffer){
                     int y1 = j*CASE_Y;
                     int x2 = (i*CASE_X) + CASE_X;
                     int y2 = (j*CASE_Y) + CASE_Y;
-                    blit(roadImage,buffer,0, 0, i*CASE_X, j*CASE_Y,20, 20);
+                    masked_blit(roadImage,buffer,0, 0, i*CASE_X, j*CASE_Y,20, 20);
                     //rectfill(buffer, x1, y1, x2, y2, makecol(255, 0, 0));
                 }else  if(game.level0[i][j].type == HOUSE){
                     int x1 = i*CASE_X;
@@ -137,7 +138,7 @@ void renderWorld(BITMAP* buffer){
                             visited[i + k][j + d] = 1;
                         }
                     }
-                    blit(houseImage,buffer,0, 0, x1, y1,60, 60);
+                    masked_blit(houseImage,buffer,0, 0, x1, y1,60, 60);
                 }else  if(game.level0[i][j].type == WATER_TOWER){
                     int x1 = i*CASE_X;
                     int y1 = j*CASE_Y;
@@ -151,7 +152,7 @@ void renderWorld(BITMAP* buffer){
                             visited[i + k][j + d] = 1;
                         }
                     }
-                    blit(waterTowerImage,buffer,0, 0, x1, y1,80, 120);
+                    masked_blit(waterTowerImage,buffer,0, 0, x1, y1,80, 120);
                 }else  if(game.level0[i][j].type == POWER_STATION){
                     int x1 = i*CASE_X;
                     int y1 = j*CASE_Y;
@@ -165,7 +166,7 @@ void renderWorld(BITMAP* buffer){
                             visited[i + k][j + d] = 1;
                         }
                     }
-                    blit(powerStationImage,buffer,0, 0, x1, y1,80, 120);
+                    masked_blit(powerStationImage,buffer,0, 0, x1, y1,80, 120);
                 }
 
                 visited[i][j] = 1;
@@ -201,7 +202,16 @@ void highlightCase(BITMAP* buffer){
         }
     }
     if(mouse_x > 920 && mouse_x < 940 && mouse_y > 32 && mouse_y < 52){
-        rect(buffer, 920, 30, 940, 50,makecol(255, 255, 0));}
+        rect(buffer, 920, 30, 940, 50,makecol(255, 255, 0));
+    }else if(mouse_x > 920 && mouse_x < 980 && mouse_y > 72 && mouse_y < 132){
+        rect(buffer, 920, 70, 980, 130,makecol(255, 255, 0));
+    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 162 && mouse_y < 282){
+        rect(buffer, 920, 160, 1000, 280,makecol(255, 255, 0));
+    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 312 && mouse_y < 432){
+        rect(buffer, 920, 310, 1000, 430,makecol(255, 255, 0));
+    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 462 && mouse_y < 582) {
+        rect(buffer, 920, 460, 1000, 580, makecol(255, 255, 0));
+    }
 }
 
 void renderActions(BITMAP* buffer){
@@ -209,8 +219,19 @@ void renderActions(BITMAP* buffer){
     rect(buffer, 910, 20, 1020, 600, makecol(255, 255, 0));
 
     // Icône route
-    blit(roadImage,buffer,0, 0, 910 + 10, 20 + 10,20, 20);
+    masked_blit(roadImage,buffer,0, 0, 910 + 10, 20 + 10,20, 20);
 
+    //Icône maison
+    masked_blit(houseImage,buffer,0, 0, 920, 70,60, 60);
+
+    //Icône central electrique
+    masked_blit(powerStationImage,buffer,0, 0, 920, 160,80, 120);
+
+    //Icône chateau eau
+    masked_blit(waterTowerImage,buffer,0, 0, 920, 310,80, 120);
+
+    //Icône pompier
+    masked_blit(fireStation,buffer,0, 0, 920, 460,80, 120);
 
 
     //Scores
@@ -219,9 +240,11 @@ void renderActions(BITMAP* buffer){
 
 void loadAssets(){
     roadImage = load_bitmap("../assets/route.bmp", NULL);
-    houseImage = load_bitmap("../assets/maison.bmp", NULL);
+    houseImage = load_bitmap("../assets/cabane.bmp", NULL);
     powerStationImage = load_bitmap("../assets/centraleelectrique.bmp", NULL);
     waterTowerImage = load_bitmap("../assets/waterTower.bmp", NULL);
+    fireStation= load_bitmap("../assets/caserne.bmp", NULL);
+
     if (!roadImage){
         allegro_message("pb route.bmp");
         allegro_exit();
