@@ -18,18 +18,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/cabane.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/cabane.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/caserne.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/caserne.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/centraleelectrique.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/centraleelectrique.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/maison.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/maison.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/waterTower.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/waterTower.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/render/render.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/render.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +84,7 @@
       <updated>1669064222964</updated>
       <workItem from="1669064224454" duration="2280000" />
       <workItem from="1669160199586" duration="133000" />
-      <workItem from="1669196237829" duration="2687000" />
+      <workItem from="1669196237829" duration="3052000" />
     </task>
     <servers />
   </component>
