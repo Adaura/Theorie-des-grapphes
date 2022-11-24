@@ -24,4 +24,25 @@ struct World {
 
 extern struct World world;
 
+struct Building {
+    enum building type;
+    int capacity;
+    int createdAt;
+    int updatedAt;
+};
+
+struct BuildingNode {
+    struct Building building;
+    struct BuildingNode *next;
+} *ptr;
+
+struct Game {
+    int flouz;
+    int citizens;
+    int water;
+    int electricity;
+    int selectedItem; // 0 : rien de sélectionné;
+    struct BuildingNode buildings;
+};
+
 #endif
