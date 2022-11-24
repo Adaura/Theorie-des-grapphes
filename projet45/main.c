@@ -48,6 +48,7 @@ int main() {
             ///------------------------------------
             route(buffer,matrice);
 
+
         }
 
         blit(buffer, screen, 0, 0, 0, 0, screen->w, screen->h);
