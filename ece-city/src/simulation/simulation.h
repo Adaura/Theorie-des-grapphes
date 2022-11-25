@@ -29,6 +29,10 @@ struct Building {
     int capacity;
     int createdAt;
     int updatedAt;
+    int x;
+    int y;
+    int w;
+    int h;
 };
 
 struct BuildingNode {
@@ -39,10 +43,14 @@ struct BuildingNode {
 struct Game {
     int flouz;
     int citizens;
+    int housesNb;
     int water;
+    int waterTowerNb;
     int electricity;
+    int powerStationNb;
     int selectedItem; // 0 : rien de sélectionné;
     struct BuildingNode buildings;
+    int duration;
 };
 
 #endif
