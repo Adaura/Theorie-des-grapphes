@@ -493,7 +493,6 @@ void renderActions(BITMAP* buffer){
 
     //Icône maison
     masked_blit(boiteaOutilhouseImage,buffer,0, 0, 975, 50,40, 40);
-    masked_blit(cabaneImage,buffer,0, 0, 920, 70,60, 60);
 
     //Icône central electrique
     masked_blit(boiteaOutilpowerStationImage,buffer,0, 0, 915, 130,80, 120);
@@ -513,6 +512,7 @@ void loadAssets(){
     roadImage = load_bitmap("../assets/route.bmp", NULL);
     chantierImage = load_bitmap("../assets/chantier.bmp", NULL);
     cabaneImage = load_bitmap("../assets/cabane.bmp", NULL);
+    houseImage = load_bitmap("../assets/cabane.bmp", NULL);
     immeubleImage = load_bitmap("../assets/immeuble.bmp", NULL);
     gratteImage = load_bitmap("../assets/gratte.bmp", NULL);
     roadImage = load_bitmap("../assets/road.bmp", NULL);
@@ -586,14 +586,16 @@ void updateGame(BITMAP* buffer){
                 game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 10;
                 ptr->building.updatedAt = game.duration;
-
+                int x1 = ptr->building.x*CASE_X;
+                int y1 = ptr->building.y*CASE_Y;
+                masked_blit(cabaneImage,buffer,0, 0, x1, y1,60, 60);
             }else if(game.duration - ptr->building.updatedAt>=15 && ptr->building.capacity == 10){
                 game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 50;
                 ptr->building.updatedAt = game.duration;
                 int x1 = ptr->building.x*CASE_X;
                 int y1 = ptr->building.y*CASE_Y;
-                masked_blit(cabaneImage,buffer,0, 0, x1, y1,60, 60);
+                masked_blit(houseImage,buffer,0, 0, x1, y1,60, 60);
             }else if(game.duration - ptr->building.updatedAt>=15 && ptr->building.capacity == 50){
                 game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 100;
@@ -625,7 +627,7 @@ void render(){
     clear_bitmap(buffer);
     blit(bufferMap, buffer, 0, 0, 0, 0, screen->w, screen->h);
     highlightCase(buffer);
-    ajouterBuilding(bufferMap);
+    insertBuilding(bufferMap);
 
     //Affiche du temps de jeur
     int hours = counter/3600;
