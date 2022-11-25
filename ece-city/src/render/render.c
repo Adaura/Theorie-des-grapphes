@@ -99,6 +99,7 @@ void insertBuilding(BITMAP* buffer){
                         world.level0[i][j].type = ROAD;
                         world.level_1[i][j].type = WATER_PIPE;
                         world.level_2[i][j].type = ELECTRICITY_CABLE;
+                        game.flouz -= 10;
                         matrice[i][j] = 1;
                     }
                 }
@@ -127,15 +128,17 @@ void insertBuilding(BITMAP* buffer){
                     if (mouse_b == 1) {
                         for(int k = 0;k<3;k++){
                             for(int d = 0;d<3;d++) {
-                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 3].type == ROAD) && world.level0[i + k][j + d].type == EMPTY){
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 3].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)){
                                     world.level0[i][j].type = HOUSE;
                                     world.level_1[i][j].type = EMPTY;
                                     world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 1000;
                                     matrice[i][j] = 2;
-                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +3][j +d].type == ROAD) && world.level0[i+k][j+d].type == EMPTY ) {
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +3][j +d].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY) ) {
                                     world.level0[i][j].type = HOUSE;
                                     world.level_1[i][j].type = EMPTY;
                                     world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 1000;
                                     matrice[i][j] = 2;
                                 }
                             }
@@ -148,7 +151,8 @@ void insertBuilding(BITMAP* buffer){
             for (int j = 0; j < GRID_NB_Y; j++) {
                 if (matrice[i][j] == 2) {
                     if (world.level0[i][j].type == HOUSE) {
-                        masked_blit(houseImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 60, 60);
+                        ajouterBuilding(world.level0[i][j].type, i, j, 3, 3);
+                        masked_blit(chantierImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 60, 60);
                     }
 
                 }
@@ -163,10 +167,24 @@ void insertBuilding(BITMAP* buffer){
                 int y2 = (j * CASE_Y) + CASE_Y;
                 if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
                     if (mouse_b == 1) {
-                        world.level0[i][j].type = POWER_STATION;
-                        world.level_1[i][j].type = EMPTY;
-                        world.level_2[i][j].type = EMPTY;
-                        matrice[i][j] = 3;
+                        for(int k = 0;k<4;k++){
+                            for(int d = 0;d<6;d++) {
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 6].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)){
+                                    world.level0[i][j].type = POWER_STATION;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 1000000;
+                                    matrice[i][j] = 3;
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +4][j +d].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)) {
+                                    world.level0[i][j].type = POWER_STATION;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 100000;
+                                    matrice[i][j] = 3;
+                                }
+                            }
+                        }
+
                     }
                 }
 
@@ -176,7 +194,7 @@ void insertBuilding(BITMAP* buffer){
             for (int j = 0; j < GRID_NB_Y; j++) {
                 if (matrice[i][j] == 3) {
                     if (world.level0[i][j].type == POWER_STATION) {
-                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        ajouterBuilding(world.level0[i][j].type,i, j, 4, 6);
                         masked_blit(powerStationImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
                     }
                 }
@@ -191,10 +209,23 @@ void insertBuilding(BITMAP* buffer){
                 int y2 = (j * CASE_Y) + CASE_Y;
                 if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
                     if (mouse_b == 1) {
-                        world.level0[i][j].type = WATER_TOWER;
-                        world.level_1[i][j].type = EMPTY;
-                        world.level_2[i][j].type = EMPTY;
-                        matrice[i][j] = 4;
+                        for(int k = 0;k<4;k++){
+                            for(int d = 0;d<6;d++) {
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 6].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)){
+                                    world.level0[i][j].type = WATER_TOWER;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 1000000;
+                                    matrice[i][j] = 4;
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +4][j +d].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)) {
+                                    world.level0[i][j].type = WATER_TOWER;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 100000;
+                                    matrice[i][j] = 4;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -204,7 +235,7 @@ void insertBuilding(BITMAP* buffer){
             for (int j = 0; j < GRID_NB_Y; j++) {
                 if (matrice[i][j] == 4) {
                     if (world.level0[i][j].type == WATER_TOWER) {
-                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        ajouterBuilding(world.level0[i][j].type,i, j, 4, 6);
                         masked_blit(waterTowerImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
                     }
                 }
@@ -219,10 +250,23 @@ void insertBuilding(BITMAP* buffer){
                 int y2 = (j * CASE_Y) + CASE_Y;
                 if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
                     if (mouse_b == 1) {
-                        world.level0[i][j].type =FIRE_STATION ;
-                        world.level_1[i][j].type = EMPTY;
-                        world.level_2[i][j].type = EMPTY;
-                        matrice[i][j] = 5;
+                        for(int k = 0;k<4;k++){
+                            for(int d = 0;d<6;d++) {
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 6].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)){
+                                    world.level0[i][j].type = FIRE_STATION;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 1000000;
+                                    matrice[i][j] = 5;
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +4][j +d].type == ROAD) && (world.level0[i + k][j + d].type == EMPTY)) {
+                                    world.level0[i][j].type = FIRE_STATION;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    game.flouz -= 100000;
+                                    matrice[i][j] = 5;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -232,7 +276,7 @@ void insertBuilding(BITMAP* buffer){
             for (int j = 0; j < GRID_NB_Y; j++) {
                 if (matrice[i][j] == 5) {
                     if (world.level0[i][j].type == FIRE_STATION) {
-                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        ajouterBuilding(world.level0[i][j].type,i, j, 4, 6);
                         masked_blit(fireStation, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
                     }
                 }
