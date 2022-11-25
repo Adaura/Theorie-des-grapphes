@@ -46,7 +46,7 @@ int main() {
             quadrillage(buffer);
 
             ///------------------------------------
-            route(buffer,matrice);
+            600(buffer,matrice);
 
 
         }
