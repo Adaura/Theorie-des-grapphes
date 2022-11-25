@@ -1,10 +1,10 @@
-"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/ninja.exe" -G Ninja -S "C:\Users\adame\Documents\Travail\ECE Ing 2\Semestre 1\Theorie des graphes\Projet\V.5\ece-city" -B "C:\Users\adame\Documents\Travail\ECE Ing 2\Semestre 1\Theorie des graphes\Projet\V.5\ece-city\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.1/bin/ninja/win/ninja.exe" -G Ninja -S "C:\Users\33616\OneDrive - Groupe INSEEC (POCE)\Documents\ING2\info\test\codes\V1\Theorie-des-grapphes\ece-city" -B "C:\Users\33616\OneDrive - Groupe INSEEC (POCE)\Documents\ING2\info\test\codes\V1\Theorie-des-grapphes\ece-city\cmake-build-debug"
 -- The C compiler identification is GNU 8.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/MinGW/bin/gcc.exe - skipped
+-- Check for working C compiler: C:/Program Files/CodeBlocks/MinGW/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug
+-- Build files have been written to: C:/Users/33616/OneDrive - Groupe INSEEC (POCE)/Documents/ING2/info/test/codes/V1/Theorie-des-grapphes/ece-city/cmake-build-debug

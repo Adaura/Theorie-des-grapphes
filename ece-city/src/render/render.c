@@ -395,8 +395,8 @@ void highlightCase(BITMAP* buffer){
         rect(buffer, 915, 130, 955, 190,makecol(255, 0, 0));
     }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 130 && mouse_y < 190){
         rect(buffer, 975, 130, 1015, 190,makecol(255, 0, 0));
-    }else if(mouse_x > 940 && mouse_x < 980 && mouse_y > 210 && mouse_y < 270) {
-        rect(buffer, 940, 210, 980, 270, makecol(255, 0, 0));
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 210 && mouse_y < 270) {
+        rect(buffer, 915, 210, 955, 270, makecol(255, 0, 0));
     }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 480 && mouse_y < 510) {
         rect(buffer, 910, 480, 1019, 510, makecol(255, 0, 0));}
     else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 520 && mouse_y < 550) {
@@ -424,7 +424,7 @@ void renderActions(BITMAP* buffer){
     masked_blit(boiteaOutilwaterTowerImage,buffer,0, 0, 975, 130,80, 120);
 
     //Icône pompier
-    masked_blit(boiteaOutilfireStation,buffer,0, 0, 940, 210,80, 120);
+    masked_blit(boiteaOutilfireStation,buffer,0, 0, 915, 210,80, 120);
 
 
     //Scores
