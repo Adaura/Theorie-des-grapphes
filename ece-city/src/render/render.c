@@ -87,20 +87,29 @@ void ajouterBuilding(BITMAP* buffer){
                 int y2 = (j * CASE_Y) + CASE_Y;
                 if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
                     if (mouse_b == 1) {
-                        world.level0[i][j].type = HOUSE;
-                        world.level_1[i][j].type = EMPTY;
-                        world.level_2[i][j].type = EMPTY;
-                        matrice[i][j] = 2;
+                        for(int k = 0;k<3;k++){
+                            for(int d = 0;d<3;d++) {
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 3].type == ROAD) && world.level0[i + k][j + d].type == EMPTY){
+                                        world.level0[i][j].type = HOUSE;
+                                        world.level_1[i][j].type = EMPTY;
+                                        world.level_2[i][j].type = EMPTY;
+                                        matrice[i][j] = 2;
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +3][j +d].type == ROAD) && world.level0[i+k][j+d].type == EMPTY ) {
+                                    world.level0[i][j].type = HOUSE;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    matrice[i][j] = 2;
+                                }
+                            }
+                        }
                     }
                 }
-
             }
         }
         for (int i = 0; i < GRID_NB_X; i++) {
             for (int j = 0; j < GRID_NB_Y; j++) {
                 if (matrice[i][j] == 2) {
                     if (world.level0[i][j].type == HOUSE) {
-                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
                         masked_blit(houseImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 60, 60);
                     }
 
