@@ -387,19 +387,19 @@ void highlightCase(BITMAP* buffer){
             }
         }
     }
-    if(mouse_x > 915 && mouse_x < 955 && mouse_y > 50 && mouse_y < 90){
+    if(mouse_x > 915 && mouse_x < 955 && mouse_y > 50 && mouse_y < 90){//contour route
         rect(buffer, 915, 50, 955, 90,makecol(255, 0, 0));
-    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 50 && mouse_y < 90){
-        rect(buffer, 975, 50, 1015, 90,makecol(255, 0, 0));
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 130 && mouse_y < 190){
-        rect(buffer, 915, 130, 955, 190,makecol(255, 0, 0));
-    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 130 && mouse_y < 190){
-        rect(buffer, 975, 130, 1015, 190,makecol(255, 0, 0));
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 210 && mouse_y < 270) {
-        rect(buffer, 915, 210, 955, 270, makecol(255, 0, 0));
-    }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 480 && mouse_y < 510) {
-        rect(buffer, 910, 480, 1019, 510, makecol(255, 0, 0));}
-    else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 520 && mouse_y < 550) {
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 110 && mouse_y < 150){//contour maison
+        rect(buffer, 915, 110, 955, 150,makecol(255, 0, 0));
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 170 && mouse_y < 230){
+        rect(buffer, 915, 170, 955, 230,makecol(255, 0, 0));
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 250 && mouse_y < 310) {
+        rect(buffer, 915, 250, 955, 310, makecol(255, 0, 0));
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 330 && mouse_y < 390) {
+        rect(buffer, 915, 330, 955, 390, makecol(255, 0, 0));
+    }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 470 && mouse_y < 500){
+        rect(buffer, 910, 480, 1019, 500,makecol(255, 0, 0));
+    }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 520 && mouse_y < 550) {
         rect(buffer, 910, 520, 1019, 550, makecol(255, 0, 0));
     }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 570 && mouse_y < 600) {
         rect(buffer, 910, 570, 1019, 600, makecol(255, 0, 0));
@@ -413,19 +413,23 @@ void renderActions(BITMAP* buffer){
 
     // Icône route
     masked_blit(boiteaOutilroadImage,buffer,0, 0, 915, 50,40, 40);
+    textprintf_ex(buffer,font,965,70, makecol(0,0,0),-1,"10EF");
 
     //Icône maison
-    masked_blit(boiteaOutilhouseImage,buffer,0, 0, 975, 50,40, 40);
+    masked_blit(boiteaOutilhouseImage,buffer,0, 0, 915, 110,40, 40);
+    textprintf_ex(buffer,font,965,130, makecol(0,0,0),-1,"1000EF");
 
     //Icône central electrique
-    masked_blit(boiteaOutilpowerStationImage,buffer,0, 0, 915, 130,80, 120);
+    masked_blit(boiteaOutilpowerStationImage,buffer,0, 0, 915, 170,80, 120);
+    textprintf_ex(buffer,font,965,210, makecol(0,0,0),-1,"100 000EF");
 
     //Icône chateau eau
-    masked_blit(boiteaOutilwaterTowerImage,buffer,0, 0, 975, 130,80, 120);
+    masked_blit(boiteaOutilwaterTowerImage,buffer,0, 0, 915, 250,80, 120);
+    textprintf_ex(buffer,font,965,280, makecol(0,0,0),-1,"100 000EF");
 
     //Icône pompier
-    masked_blit(boiteaOutilfireStation,buffer,0, 0, 915, 210,80, 120);
-
+    masked_blit(boiteaOutilfireStation,buffer,0, 0, 915, 330,80, 120);
+    textprintf_ex(buffer,font,965,360, makecol(0,0,0),-1,"10 000EF");
 
     //Scores
     rect(buffer, 20, 710, 800, 760, makecol(255, 255, 0));
