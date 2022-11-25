@@ -363,7 +363,7 @@ void initRender(){
     blit(bufferMap, screen, 0, 0, 0, 0, screen->w, screen->h);
 }
 
-void updateGame(){
+void updateGame(BITMAP* buffer){
     game.electricity = 0;
     game.water = 0;
     game.citizens = 0;
@@ -383,16 +383,19 @@ void updateGame(){
 
         if(ptr->building.type == HOUSE){
             if(game.duration - ptr->building.createdAt>=15 && ptr->building.capacity == 0){
+                game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 10;
                 ptr->building.updatedAt = game.duration;
 
             }else if(game.duration - ptr->building.updatedAt>=15 && ptr->building.capacity == 10){
+                game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 50;
                 ptr->building.updatedAt = game.duration;
                 int x1 = ptr->building.x*CASE_X;
                 int y1 = ptr->building.y*CASE_Y;
                 masked_blit(cabaneImage,buffer,0, 0, x1, y1,60, 60);
             }else if(game.duration - ptr->building.updatedAt>=15 && ptr->building.capacity == 50){
+                game.flouz += ptr->building.capacity * 10;
                 ptr->building.capacity = 100;
                 ptr->building.updatedAt = game.duration;
                 int x1 = ptr->building.x*CASE_X;
@@ -418,9 +421,9 @@ void renderBuilding(){
 }
 
 void render(){
+    updateGame(bufferMap);
     clear_bitmap(buffer);
     blit(bufferMap, buffer, 0, 0, 0, 0, screen->w, screen->h);
-    updateGame();
     highlightCase(buffer);
 
     //Affiche du temps de jeur
