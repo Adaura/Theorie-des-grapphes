@@ -12,9 +12,16 @@ BITMAP *bufferMap;
 BITMAP *buffer;
 
 BITMAP *roadImage;
+BITMAP *boiteaOutilroadImage;
+BITMAP *houseImage;
+BITMAP *boiteaOutilhouseImage;
 BITMAP *powerStationImage;
+BITMAP *boiteaOutilpowerStationImage;
 BITMAP *waterTowerImage;
+BITMAP *boiteaOutilwaterTowerImage;
 BITMAP *fireStation;
+BITMAP *boiteaOutilfireStation;
+BITMAP *palette;
 BITMAP *chantierImage;
 BITMAP *cabaneImage;
 BITMAP *immeubleImage;
@@ -53,6 +60,185 @@ void ajouterBuilding(enum building type, int x, int y, int w, int h){
 
 void supprimerBatiment(){
 
+}
+
+void insertBuilding(BITMAP* buffer){
+
+    int matrice[GRID_NB_X][GRID_NB_Y];
+
+    if(mouse_x > 915 && mouse_x < 955 && mouse_y > 50 && mouse_y < 90){
+        if(mouse_b==1){
+            game.selectedItem=1;
+        }
+    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 50 && mouse_y < 90){
+        if(mouse_b==1){
+            game.selectedItem=2;
+        }
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 130 && mouse_y < 190){
+        if(mouse_b==1){
+            game.selectedItem=3;
+        }
+    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 130 && mouse_y < 190){
+        if(mouse_b==1){
+            game.selectedItem=4;
+        }
+    }else if(mouse_x > 940 && mouse_x < 980 && mouse_y > 210 && mouse_y < 270) {
+        if(mouse_b==1){
+            game.selectedItem=5;
+        }
+    }
+    if(game.selectedItem==1) {
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                int x1 = i * CASE_X;
+                int y1 = j * CASE_Y;
+                int x2 = (i * CASE_X) + CASE_X;
+                int y2 = (j * CASE_Y) + CASE_Y;
+                if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
+                    if (mouse_b == 1) {
+                        world.level0[i][j].type = ROAD;
+                        world.level_1[i][j].type = WATER_PIPE;
+                        world.level_2[i][j].type = ELECTRICITY_CABLE;
+                        matrice[i][j] = 1;
+                    }
+                }
+
+            }
+        }
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                if (matrice[i][j] == 1) {
+                    if (world.level0[i][j].type == ROAD) {
+
+                        masked_blit(roadImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 40, 40);
+                    }
+
+                }
+            }
+        }
+    }else  if(game.selectedItem==2) {
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                int x1 = i * CASE_X;
+                int y1 = j * CASE_Y;
+                int x2 = (i * CASE_X) + CASE_X;
+                int y2 = (j * CASE_Y) + CASE_Y;
+                if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
+                    if (mouse_b == 1) {
+                        for(int k = 0;k<3;k++){
+                            for(int d = 0;d<3;d++) {
+                                if ((world.level0[i + k][j - 1].type == ROAD || world.level0[i + k][j + 3].type == ROAD) && world.level0[i + k][j + d].type == EMPTY){
+                                    world.level0[i][j].type = HOUSE;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    matrice[i][j] = 2;
+                                }else if ((world.level0[i -1][j+d].type == ROAD || world.level0[i +3][j +d].type == ROAD) && world.level0[i+k][j+d].type == EMPTY ) {
+                                    world.level0[i][j].type = HOUSE;
+                                    world.level_1[i][j].type = EMPTY;
+                                    world.level_2[i][j].type = EMPTY;
+                                    matrice[i][j] = 2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                if (matrice[i][j] == 2) {
+                    if (world.level0[i][j].type == HOUSE) {
+                        masked_blit(houseImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 60, 60);
+                    }
+
+                }
+            }
+        }
+    }else  if(game.selectedItem==3) {
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                int x1 = i * CASE_X;
+                int y1 = j * CASE_Y;
+                int x2 = (i * CASE_X) + CASE_X;
+                int y2 = (j * CASE_Y) + CASE_Y;
+                if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
+                    if (mouse_b == 1) {
+                        world.level0[i][j].type = POWER_STATION;
+                        world.level_1[i][j].type = EMPTY;
+                        world.level_2[i][j].type = EMPTY;
+                        matrice[i][j] = 3;
+                    }
+                }
+
+            }
+        }
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                if (matrice[i][j] == 3) {
+                    if (world.level0[i][j].type == POWER_STATION) {
+                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        masked_blit(powerStationImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
+                    }
+                }
+            }
+        }
+    }else  if(game.selectedItem==4) {
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                int x1 = i * CASE_X;
+                int y1 = j * CASE_Y;
+                int x2 = (i * CASE_X) + CASE_X;
+                int y2 = (j * CASE_Y) + CASE_Y;
+                if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
+                    if (mouse_b == 1) {
+                        world.level0[i][j].type = WATER_TOWER;
+                        world.level_1[i][j].type = EMPTY;
+                        world.level_2[i][j].type = EMPTY;
+                        matrice[i][j] = 4;
+                    }
+                }
+
+            }
+        }
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                if (matrice[i][j] == 4) {
+                    if (world.level0[i][j].type == WATER_TOWER) {
+                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        masked_blit(waterTowerImage, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
+                    }
+                }
+            }
+        }
+    }else  if(game.selectedItem==5) {
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                int x1 = i * CASE_X;
+                int y1 = j * CASE_Y;
+                int x2 = (i * CASE_X) + CASE_X;
+                int y2 = (j * CASE_Y) + CASE_Y;
+                if (mouse_x >= x1 && mouse_x <= x2 && mouse_y > y1 && mouse_y < y2) {
+                    if (mouse_b == 1) {
+                        world.level0[i][j].type =FIRE_STATION ;
+                        world.level_1[i][j].type = EMPTY;
+                        world.level_2[i][j].type = EMPTY;
+                        matrice[i][j] = 5;
+                    }
+                }
+
+            }
+        }
+        for (int i = 0; i < GRID_NB_X; i++) {
+            for (int j = 0; j < GRID_NB_Y; j++) {
+                if (matrice[i][j] == 5) {
+                    if (world.level0[i][j].type == FIRE_STATION) {
+                        //rect(buffer,x1,y1,x2,y2, makecol(255,0,0));
+                        masked_blit(fireStation, buffer, 0, 0, i * CASE_X, j * CASE_Y, 80, 120);
+                    }
+                }
+            }
+        }
+    }
 }
 
 void initWorld(){
@@ -151,7 +337,6 @@ void initWorld(){
                     }
                 }
             }
-
         }
     }
     fclose(fp); // close the file
@@ -279,37 +464,45 @@ void highlightCase(BITMAP* buffer){
             }
         }
     }
-    if(mouse_x > 920 && mouse_x < 940 && mouse_y > 32 && mouse_y < 52){
-        rect(buffer, 920, 30, 940, 50,makecol(255, 255, 0));
-    }else if(mouse_x > 920 && mouse_x < 980 && mouse_y > 72 && mouse_y < 132){
-        rect(buffer, 920, 70, 980, 130,makecol(255, 255, 0));
-    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 162 && mouse_y < 282){
-        rect(buffer, 920, 160, 1000, 280,makecol(255, 255, 0));
-    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 312 && mouse_y < 432){
-        rect(buffer, 920, 310, 1000, 430,makecol(255, 255, 0));
-    }else if(mouse_x > 920 && mouse_x < 1000 && mouse_y > 462 && mouse_y < 582) {
-        rect(buffer, 920, 460, 1000, 580, makecol(255, 255, 0));
+    if(mouse_x > 915 && mouse_x < 955 && mouse_y > 50 && mouse_y < 90){
+        rect(buffer, 915, 50, 955, 90,makecol(255, 0, 0));
+    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 50 && mouse_y < 90){
+        rect(buffer, 975, 50, 1015, 90,makecol(255, 0, 0));
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 130 && mouse_y < 190){
+        rect(buffer, 915, 130, 955, 190,makecol(255, 0, 0));
+    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 130 && mouse_y < 190){
+        rect(buffer, 975, 130, 1015, 190,makecol(255, 0, 0));
+    }else if(mouse_x > 940 && mouse_x < 980 && mouse_y > 210 && mouse_y < 270) {
+        rect(buffer, 940, 210, 980, 270, makecol(255, 0, 0));
+    }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 480 && mouse_y < 510) {
+        rect(buffer, 910, 480, 1019, 510, makecol(255, 0, 0));}
+    else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 520 && mouse_y < 550) {
+        rect(buffer, 910, 520, 1019, 550, makecol(255, 0, 0));
+    }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 570 && mouse_y < 600) {
+        rect(buffer, 910, 570, 1019, 600, makecol(255, 0, 0));
     }
 }
 
 void renderActions(BITMAP* buffer){
     //Palette
-    rect(buffer, 910, 20, 1020, 600, makecol(255, 255, 0));
+    //rect(buffer, 910, 20, 1020, 600, makecol(255, 255, 0));
+    masked_blit(palette,buffer,0, 0, 910, 20,110, 580);
 
     // Icône route
-    masked_blit(roadImage,buffer,0, 0, 910 + 10, 20 + 10,20, 20);
+    masked_blit(boiteaOutilroadImage,buffer,0, 0, 915, 50,40, 40);
 
     //Icône maison
+    masked_blit(boiteaOutilhouseImage,buffer,0, 0, 975, 50,40, 40);
     masked_blit(cabaneImage,buffer,0, 0, 920, 70,60, 60);
 
     //Icône central electrique
-    masked_blit(powerStationImage,buffer,0, 0, 920, 160,80, 120);
+    masked_blit(boiteaOutilpowerStationImage,buffer,0, 0, 915, 130,80, 120);
 
     //Icône chateau eau
-    masked_blit(waterTowerImage,buffer,0, 0, 920, 310,80, 120);
+    masked_blit(boiteaOutilwaterTowerImage,buffer,0, 0, 975, 130,80, 120);
 
     //Icône pompier
-    masked_blit(fireStation,buffer,0, 0, 920, 460,80, 120);
+    masked_blit(boiteaOutilfireStation,buffer,0, 0, 940, 210,80, 120);
 
 
     //Scores
@@ -322,9 +515,16 @@ void loadAssets(){
     cabaneImage = load_bitmap("../assets/cabane.bmp", NULL);
     immeubleImage = load_bitmap("../assets/immeuble.bmp", NULL);
     gratteImage = load_bitmap("../assets/gratte.bmp", NULL);
+    roadImage = load_bitmap("../assets/road.bmp", NULL);
+    boiteaOutilroadImage=load_bitmap("../assets/roadboiteaoutil.bmp", NULL);
+    boiteaOutilhouseImage = load_bitmap("../assets/cabanepalette.bmp", NULL);
     powerStationImage = load_bitmap("../assets/centraleelectrique.bmp", NULL);
+    boiteaOutilpowerStationImage = load_bitmap("../assets/centraleelectriquepalette.bmp", NULL);
     waterTowerImage = load_bitmap("../assets/waterTower.bmp", NULL);
+    boiteaOutilwaterTowerImage = load_bitmap("../assets/waterTowerpalette.bmp", NULL);
     fireStation= load_bitmap("../assets/caserne.bmp", NULL);
+    boiteaOutilfireStation= load_bitmap("../assets/casernepalette.bmp", NULL);
+    palette=load_bitmap("../assets/palette.bmp", NULL);
 
     if (!roadImage){
         allegro_message("pb route.bmp");
@@ -425,6 +625,7 @@ void render(){
     clear_bitmap(buffer);
     blit(bufferMap, buffer, 0, 0, 0, 0, screen->w, screen->h);
     highlightCase(buffer);
+    ajouterBuilding(bufferMap);
 
     //Affiche du temps de jeur
     int hours = counter/3600;

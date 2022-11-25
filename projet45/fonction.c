@@ -16,6 +16,8 @@ int affichage(BITMAP* image,BITMAP* ville,BITMAP* quitter,BITMAP* nouvellepartie
     blit(nouvellepartie,buffer,0,0,260,193,nouvellepartie->w,nouvellepartie->h);
     blit(quitter,buffer,0,0,260,383,quitter->w,quitter->h);
     blit(sauvegarder,buffer,0,0,660,193,sauvegarder->w,sauvegarder->h);
+    int player_score=2;
+    textprintf_ex(buffer,font,100,40,makecol(0,0,0),-1,"Taken: %i",player_score);
 
     if(mouse_x>=260 && mouse_y>=193 && mouse_x<= 522 && mouse_y<=285)
     {
@@ -61,6 +63,9 @@ void quadrillage(BITMAP* buffer)
             for (int j = 0; j < nbcolonnes; j++)
             {
                 rect(buffer, i*20, j*20, (i*20) + 20, (j*20) + 20, makecol(0, 0, 0));
+
+
+
             }
         }
 
