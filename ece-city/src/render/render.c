@@ -32,19 +32,19 @@ void ajouterBuilding(BITMAP* buffer){
         if(mouse_b==1){
             game.selectedItem=1;
         }
-    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 50 && mouse_y < 90){
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 110 && mouse_y < 150){
         if(mouse_b==1){
             game.selectedItem=2;
         }
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 130 && mouse_y < 190){
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 170 && mouse_y < 230){
         if(mouse_b==1){
             game.selectedItem=3;
         }
-    }else if(mouse_x > 975 && mouse_x < 1015 && mouse_y > 130 && mouse_y < 190){
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 250 && mouse_y < 310){
         if(mouse_b==1){
             game.selectedItem=4;
         }
-    }else if(mouse_x > 940 && mouse_x < 980 && mouse_y > 210 && mouse_y < 270) {
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 330 && mouse_y < 390) {
         if(mouse_b==1){
             game.selectedItem=5;
         }
@@ -391,11 +391,11 @@ void highlightCase(BITMAP* buffer){
         rect(buffer, 915, 50, 955, 90,makecol(255, 0, 0));
     }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 110 && mouse_y < 150){//contour maison
         rect(buffer, 915, 110, 955, 150,makecol(255, 0, 0));
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 170 && mouse_y < 230){
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 170 && mouse_y < 230){//contour central electrique
         rect(buffer, 915, 170, 955, 230,makecol(255, 0, 0));
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 250 && mouse_y < 310) {
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 250 && mouse_y < 310) {//contour chateau d'eau
         rect(buffer, 915, 250, 955, 310, makecol(255, 0, 0));
-    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 330 && mouse_y < 390) {
+    }else if(mouse_x > 915 && mouse_x < 955 && mouse_y > 330 && mouse_y < 390) {//contour caserne
         rect(buffer, 915, 330, 955, 390, makecol(255, 0, 0));
     }else if(mouse_x > 910 && mouse_x < 1019 && mouse_y > 470 && mouse_y < 500){
         rect(buffer, 910, 480, 1019, 500,makecol(255, 0, 0));
