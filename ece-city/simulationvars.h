@@ -24,6 +24,7 @@
 #define BUILDING_CASE_H = 6;
 
 extern int gameEndFlag;
+extern int debugFlag;
 
 enum building { EMPTY, ROAD, HOUSE, WATER_TOWER, POWER_STATION,FIRE_STATION, WATER_PIPE, ELECTRICITY_CABLE};
 
@@ -39,6 +40,8 @@ struct World {
 
 struct Building {
     enum building type;
+    bool valid;
+    int cost;
     int capacity;
     int createdAt;
     int updatedAt;
