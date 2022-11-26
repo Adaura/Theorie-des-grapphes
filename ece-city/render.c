@@ -195,7 +195,7 @@ void render_update(struct Game game) {
     highlightCase(current, game);
     draw_buildings(game, current);
 
-    if(debugFlag == 1) debug(game, current);
+    if(debugFlag == 0) debug(game, current);
     blit(current, screen, 0, 0, 0, 0, screen->w, screen->h);
 }
 
