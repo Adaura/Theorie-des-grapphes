@@ -7,36 +7,38 @@
 #include "simulation.h"
 #include "assets.h"
 
+
+//ajout d un building
 void ajouterBuilding(struct Game *game, int x, int y) {
     //Créer la structure building
     //create a link
-    struct BuildingNode *buildingNode = (struct BuildingNode *) malloc(sizeof(struct BuildingNode));
+    struct BuildingNode *buildingNode = (struct BuildingNode *) malloc(sizeof(struct BuildingNode));//malloc des buildings
 
     buildingNode->building.type = game->selectedBuilding;
     buildingNode->building.x = x;
     buildingNode->building.y = y;
     buildingNode->building.createdAt = game->duration;
     buildingNode->building.updatedAt = game->duration;
-    if (game->selectedBuilding == HOUSE) {
+    if (game->selectedBuilding == HOUSE) {//initialisation dans le cas d'une maison
         buildingNode->building.capacity = 0;
         buildingNode->building.w = 3;
         buildingNode->building.h = 3;
         buildingNode->building.cost= 1000;
-    } else if (game->selectedBuilding == WATER_TOWER) {
+    } else if (game->selectedBuilding == WATER_TOWER) {//initialisation dans le cas d'un chateau d eau
         buildingNode->building.capacity = 5000;
         buildingNode->building.w = 4;
         buildingNode->building.h = 6;
         buildingNode->building.cost= 100000;
-    } else if (game->selectedBuilding == POWER_STATION) {
+    } else if (game->selectedBuilding == POWER_STATION) {//initialisation dans le cas d'une centrale electrique
         buildingNode->building.capacity = 5000;
         buildingNode->building.w = 4;
         buildingNode->building.h = 6;
         buildingNode->building.cost= 100000;
-    } else if (game->selectedBuilding == ROAD) {
+    } else if (game->selectedBuilding == ROAD) {//initialisation dans le cas d'une route
         buildingNode->building.w = 1;
         buildingNode->building.h = 1;
         buildingNode->building.cost= 10;
-    }else if (game->selectedBuilding == FIRE_STATION) {
+    }else if (game->selectedBuilding == FIRE_STATION) {//initialisation dans le cas d'une caserne
         buildingNode->building.capacity = 20;
         buildingNode->building.w = 4;
         buildingNode->building.h = 6;
@@ -62,24 +64,27 @@ void ajouterBuilding(struct Game *game, int x, int y) {
             game->world.level0[x + k][y + d] = game->selectedBuilding;
         }
     }
-
+//noeud suivant
     game->flouz -= buildingNode->building.cost;
     buildingNode->next = game->buildings.next;
     game->buildings.next = buildingNode;
 }
 
+//algo theorie des grapphes
 bool pathToPowerStation(struct Game *game){
     return false;
 }
 
+//algo theorie des grapphes
 bool pathToWaterTower(struct Game *game){
     return false;
 }
 
+//mise  a  jour des batiments
 void updateBuildingState(struct Building *building, struct Game *game) {
     // Case building technique
     bool valid = false;
-    if (building->type == POWER_STATION || building->type == WATER_TOWER || building->type == FIRE_STATION) {
+    if (building->type == POWER_STATION || building->type == WATER_TOWER || building->type == FIRE_STATION) {//cas de validite des batiments sauf  maison
         for (int i = 0; i < building->w; i++) {
             if (game->world.level0[building->x + i][building->y - 1] == ROAD) {
                 valid = true;
@@ -98,7 +103,7 @@ void updateBuildingState(struct Building *building, struct Game *game) {
                 break;
             }
         }
-    } else if (building->type == HOUSE) {
+    } else if (building->type == HOUSE) {//cas d  une  maison
         if (pathToPowerStation(game) && pathToWaterTower(game)) {
             valid = true;
         }
@@ -108,6 +113,7 @@ void updateBuildingState(struct Building *building, struct Game *game) {
     building->valid = valid;
 }
 
+//mise a  jour du jeu regulierement
 void update(struct Game *game) {
     struct BuildingNode *ptr = &game->buildings;
     while (ptr != NULL) {

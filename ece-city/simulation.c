@@ -5,6 +5,7 @@
 #include "building.h"
 #include "map.h"
 
+//initialisation des donnees du jeu
 void init_game_world(struct Game *game){
     //Init game params
     game->citizens = 0;
@@ -17,10 +18,13 @@ void init_game_world(struct Game *game){
     printf("### %d\n", game->flouz);
 }
 
+//lancement de l initialisation
 void simulation_init(struct Game *game){
     init_game_world(game);
     map_init(game);
 }
+
+//mise a jour du jeu
 void simulation_update(struct Game *game){
     game->currentLevel = input_selectedLevel;
     game->electricity = 0;

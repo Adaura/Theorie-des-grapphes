@@ -8,6 +8,7 @@
 
 #include <allegro.h>
 
+//enum des differents batiments possible dans le jeu
 enum ASSETS {
     ASSET_ROAD,
     //Les maisons

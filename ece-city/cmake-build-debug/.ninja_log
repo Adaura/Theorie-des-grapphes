@@ -1,89 +1,23 @@
 # ninja log v5
-120	202	6910871462288686	ece-city.exe	f4398a853362e687
-2	120	6910871461495843	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-2	26	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-3	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	111	6910871991985684	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-112	190	6910871992746494	ece-city.exe	f4398a853362e687
-2	24	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	121	6910872664446413	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-121	206	6910872665266599	ece-city.exe	f4398a853362e687
-3	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	112	6910875134799114	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-112	190	6910875135549281	ece-city.exe	f4398a853362e687
-5	29	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	273	6910916241599807	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-273	445	6910916243280178	ece-city.exe	f4398a853362e687
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	112	6910917286498879	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-112	192	6910917287259643	ece-city.exe	f4398a853362e687
-2	28	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	131	6910917606334278	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-131	229	6910917607264004	ece-city.exe	f4398a853362e687
-3	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	112	6910918033509265	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-113	192	6910918034269438	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	114	6910918948146678	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-114	196	6910918948944971	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	26	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	24	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	118	6910921306359336	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-119	208	6910921307225242	ece-city.exe	f4398a853362e687
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	122	6910921694626262	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-122	207	6910921695431491	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	116	6910923257058164	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-116	196	6910923257828341	ece-city.exe	f4398a853362e687
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	112	6910923426127976	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-112	191	6910923426898873	ece-city.exe	f4398a853362e687
-3	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	113	6910924065895546	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-113	192	6910924066655737	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	111	6910925166741515	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-111	199	6910925167501685	ece-city.exe	f4398a853362e687
-3	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	115	6910928262143735	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-115	202	6910928262929363	ece-city.exe	f4398a853362e687
-3	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	113	6910929555538610	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-114	192	6910929556294470	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	119	6910929951869848	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-119	202	6910929952665763	ece-city.exe	f4398a853362e687
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-3	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	114	6910932790863507	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-114	194	6910932791634507	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	114	6910934689383483	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-114	193	6910934690143652	ece-city.exe	f4398a853362e687
-3	31	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	122	6910934899425373	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-122	206	6910934900245565	ece-city.exe	f4398a853362e687
-2	25	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	204	6910935410492396	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-205	292	6910935411642660	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	119	6910935699036823	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-120	201	6910935699823073	ece-city.exe	f4398a853362e687
-3	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	24	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	118	6910937296451021	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-118	201	6910937297251202	ece-city.exe	f4398a853362e687
-2	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	136	6910938580786811	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-136	221	6910938581616996	ece-city.exe	f4398a853362e687
-3	25	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	159	6910938719763931	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-160	246	6910938720591069	ece-city.exe	f4398a853362e687
-2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	8aff884d25ccfc23
-2	117	6910940599869120	CMakeFiles/ece-city.dir/main.c.obj	351aaab957b6ff0b
-117	200	6910940600665182	ece-city.exe	f4398a853362e687
+13	93	6911884850580394	CMakeFiles/ece-city.dir/main.c.obj	a729dd5df7972b68
+108	195	6911884851570613	ece-city.exe	c1ec133b1707c9af
+26	156	6911909704519572	build.ninja	57656929b2d57eac
+1	23	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	f63cfabde23719b7
+2	87	6911884850520374	CMakeFiles/ece-city.dir/assets.c.obj	7e12f48d363bf392
+4	108	6911870713151368	CMakeFiles/ece-city.dir/ecegame.c.obj	1c4ea0b77fafdfe5
+5	101	6911884850670415	CMakeFiles/ece-city.dir/building.c.obj	9beba25cd72ebe39
+7	117	6911870713241403	CMakeFiles/ece-city.dir/input.c.obj	189d0a1de7a0811
+12	118	6911870713261389	CMakeFiles/ece-city.dir/simulation.c.obj	4e763b617d5a41be
+10	96	6911884850620403	CMakeFiles/ece-city.dir/map.c.obj	cc7362b543b12779
+7	108	6911884850740429	CMakeFiles/ece-city.dir/render.c.obj	5092448bafc95aa0
+3	25	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	f63cfabde23719b7
+7	98	6911909730014698	CMakeFiles/ece-city.dir/main.c.obj	a729dd5df7972b68
+2	105	6911909730084719	CMakeFiles/ece-city.dir/assets.c.obj	7e12f48d363bf392
+9	108	6911909730105157	CMakeFiles/ece-city.dir/ecegame.c.obj	1c4ea0b77fafdfe5
+11	112	6911909730154724	CMakeFiles/ece-city.dir/map.c.obj	cc7362b543b12779
+14	114	6911909730174723	CMakeFiles/ece-city.dir/input.c.obj	189d0a1de7a0811
+4	127	6911909730314742	CMakeFiles/ece-city.dir/building.c.obj	9beba25cd72ebe39
+20	131	6911909730364753	CMakeFiles/ece-city.dir/simulation.c.obj	4e763b617d5a41be
+17	134	6911909730394755	CMakeFiles/ece-city.dir/render.c.obj	5092448bafc95aa0
+134	228	6911909731294998	ece-city.exe	c1ec133b1707c9af
+2	22	0	C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs	f63cfabde23719b7

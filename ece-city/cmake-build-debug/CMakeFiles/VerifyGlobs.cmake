@@ -3,20 +3,35 @@
 cmake_policy(SET CMP0009 NEW)
 
 # project_SRC at CMakeLists.txt:5 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/*.c")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/*.c")
 set(OLD_GLOB
-  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/main.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/assets.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/building.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/ecegame.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/input.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/main.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/map.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/render.c"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/simulation.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()
 
 # project_SRC at CMakeLists.txt:5 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/*.h")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/*.h")
 set(OLD_GLOB
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/assets.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/building.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/ecegame.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/input.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/map.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/render.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/simulation.h"
+  "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/simulationvars.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.5/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/v.8/ece-city/cmake-build-debug/CMakeFiles/cmake.verify_globs")
 endif()

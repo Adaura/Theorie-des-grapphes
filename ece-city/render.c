@@ -72,6 +72,7 @@ void render_shutdown() {
     destroy_bitmap (level2);
 }
 
+//affichage des differents infomation comme le nombre d habitant ou l argent
 void render_indicators(BITMAP *buffer, struct Game game){
     //Affiche du temps de jeur
     int hours = game.duration/3600;
@@ -97,6 +98,7 @@ void render_indicators(BITMAP *buffer, struct Game game){
 
 }
 
+//mise en evidence du batiments selectionner dans la palette
 void highlightCase(BITMAP* buffer, struct Game game){
     if(game.selectedBuilding != EMPTY && mouseCoord->selectionMode == GRID && game.currentLevel == 0){
         int x1 = mouseCoord->x*CASE_X;
@@ -136,6 +138,7 @@ void highlightCase(BITMAP* buffer, struct Game game){
     }
 }
 
+//affichage des batiments
 void draw_buildings(struct Game game, BITMAP* buffer){
     struct BuildingNode *ptr = &game.buildings;
     while (ptr != NULL) {
@@ -172,6 +175,7 @@ void draw_buildings(struct Game game, BITMAP* buffer){
     }
 }
 
+//debuf, utile en developpement
 void debug(struct Game game, BITMAP* buffer){
     for (int i = 0; i < GRID_NB_X; i++) {
         for (int j = 0; j < GRID_NB_Y; j++) {

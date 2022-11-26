@@ -26,12 +26,14 @@
 extern int gameEndFlag;
 extern int debugFlag;
 
+//type des differents batiments
 enum building { EMPTY, ROAD, HOUSE, WATER_TOWER, POWER_STATION,FIRE_STATION, WATER_PIPE, ELECTRICITY_CABLE};
 
 struct Case {
     enum building type;
 };
 
+//structure des differents niveau de la grille
 struct World {
     enum building level0[GRID_NB_X][GRID_NB_Y];
     enum building level_1[GRID_NB_X][GRID_NB_Y];
@@ -51,6 +53,7 @@ struct Building {
     int h;
 };
 
+//noeud des batiments
 struct BuildingNode {
     struct Building building;
     struct BuildingNode *next;
@@ -67,6 +70,7 @@ struct Coord{
     bool selected;
 };
 
+//structure regroupant les differentes structure
 struct Game {
     int flouz;
     int citizens;
