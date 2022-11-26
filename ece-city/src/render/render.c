@@ -1,5 +1,6 @@
 #include <allegro.h>
 #include "../simulation/simulation.h"
+#include "../simulation/building.c"
 #include "../utils/utils.c"
 #include <stdlib.h>
 #include <string.h>
@@ -372,7 +373,7 @@ void initWorld(){
                 world.level_1[i][j].type = EMPTY;
                 world.level_2[i][j].type = EMPTY;
                 if(visited[i][j] == 0){
-                    ajouterBuilding(world.level0[i][j].type,i, j, 4, 6);
+                    ajouterBuilding(game, world.level0[i][j].type,i, j, 4, 6);
                     game.flouz -= 100000;
                 }
                 for(int k = 0;k<4;k++){

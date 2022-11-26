@@ -1,7 +1,5 @@
-#include <stdio.h>
 #include <allegro.h>
-#include "src/render/render.c"
-#define ATTENDRE(temps) Sleep(temps*1000)
+#include "ecegame.h"
 
 void initialisation_allegro()
 {
@@ -19,42 +17,15 @@ void initialisation_allegro()
     show_mouse(screen);
 }
 
-/*void date(){
-    time_t secondes;
-    struct tm instant;//structure pres def dans time.h avec en elements l'année le mois le jour etc
-
-    time(&secondes);
-    instant=*localtime(&secondes);
-
-    printf("%d/%d/%d ; %d:%d:%d\n", instant.tm_mday, instant.tm_mon+1,instant.tm_year+1900, instant.tm_hour, instant.tm_min, instant.tm_sec);
-    printf("%s\n", ctime(&secondes));
-    printf("%0.lf secondes\n",difftime(instant, t0));
-}*/
+static void run_once(){
+    ecegame_init();
+    ecegame_run();
+    ecegame_shutdown();
+}
 
 int main() {
-    //time_t t0;
-    //time(&t0);
     initialisation_allegro();
-
-
-    FILE *fp = fopen("../assets/SansS.pcx", "r");
-    if (fp == NULL)
-    {
-        allegro_message("pb fichier font inexistant");
-        allegro_exit();
-        exit(EXIT_FAILURE);
-
-    }else{
-        fclose(fp); // close the file
-    }
-
-    initRender();
-
-    while (!key[KEY_ESC]) {
-       render();
-       rest(40);
-    }
-
+    run_once();
     allegro_exit();
     return 0;
 }END_OF_MAIN();
