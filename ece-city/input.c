@@ -33,6 +33,8 @@ struct Coord getMouseCoordOnMap() {
 void input_update() {
     /* end the game if the user presses Esc */
     if (key[KEY_ESC]) gameEndFlag = 1;
+    if(key[KEY_D] && debugFlag == 0) debugFlag = 1;
+    if(key[KEY_D] && debugFlag == 1) debugFlag = 0;
 
     mouseCoord->selected = false;
 

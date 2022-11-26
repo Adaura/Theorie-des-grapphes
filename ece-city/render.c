@@ -164,7 +164,19 @@ void draw_buildings(struct Game game, BITMAP* buffer){
             masked_blit(getAsset(ASSET_ROAD),buffer,0, 0, x1, y1,20, 20);
         }
 
+        if(ptr->building.type != EMPTY && !ptr->building.valid){
+            rect(buffer, x1, y1, x1 + ptr->building.w*CASE_X, y1 + ptr->building.h*CASE_Y, makecol(255, 0, 0));
+        }
+
         ptr = ptr->next;
+    }
+}
+
+void debug(struct Game game, BITMAP* buffer){
+    for (int i = 0; i < GRID_NB_X; i++) {
+        for (int j = 0; j < GRID_NB_Y; j++) {
+            textprintf_ex(buffer,font,i*CASE_X + 5,j*CASE_Y + 5,makecol(255,0,50),0,"%d", game.world.level0[i][j]);
+        }
     }
 }
 
@@ -182,6 +194,8 @@ void render_update(struct Game game) {
     map_update(current);
     highlightCase(current, game);
     draw_buildings(game, current);
+
+    if(debugFlag == 1) debug(game, current);
     blit(current, screen, 0, 0, 0, 0, screen->w, screen->h);
 }
 

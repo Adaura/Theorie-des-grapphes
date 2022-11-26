@@ -10,6 +10,7 @@
  * Indicateur de fin de jeu
  */
 int gameEndFlag = 0;
+int debugFlag = 0;
 static struct Game game;
 
 //Compteur de secondes pour le temps de jeu
