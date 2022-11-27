@@ -18,14 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/paris1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecegame.c" beforeDir="false" afterPath="$PROJECT_DIR$/ecegame.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paries.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paris.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paris.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.c" beforeDir="false" afterPath="$PROJECT_DIR$/render.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.h" beforeDir="false" afterPath="$PROJECT_DIR$/render.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projet45/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../projet45/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
