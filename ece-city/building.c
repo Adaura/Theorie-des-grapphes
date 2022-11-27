@@ -72,16 +72,6 @@ void ajouterBuilding(struct Game *game, int x, int y, enum building type) {
     game->buildings.next = buildingNode;
 }
 
-//algo theorie des grapphes
-bool pathToPowerStation(struct Game *game) {
-    return false;
-}
-
-//algo theorie des grapphes
-bool pathToWaterTower(struct Game *game) {
-    return false;
-}
-
 //mise  a  jour des batiments
 void updateBuildingState(struct Building *building, struct Game *game) {
     // Case building technique
@@ -97,6 +87,8 @@ void updateBuildingState(struct Building *building, struct Game *game) {
                 building->valid = true;
                 break;
             }
+        }
+        for (int i = 0; i < building->h; i++) {
             if (game->world.level0[building->x - 1][building->y + i] == ROAD) {
                 building->valid = true;
                 break;
@@ -236,27 +228,38 @@ void update(struct Game *game) {
             game->waterTowerNb++;
         }
 
+        int tempCapacity = ptr->building.capacity;
         if (ptr->building.type == HOUSE && ptr->building.valid) {
             if (game->duration - ptr->building.createdAt >= CYCLE_DURATION && ptr->building.capacity == 0) {
                 game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
-                ptr->building.capacity = 10;
+                tempCapacity = 10;
                 ptr->building.updatedAt = game->duration;
             } else if (game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 10) {
                 game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
-                ptr->building.capacity = 50;
+                tempCapacity = 50;
                 ptr->building.updatedAt = game->duration;
             } else if (game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 50) {
                 game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
-                ptr->building.capacity = 100;
+                tempCapacity = 100;
                 ptr->building.updatedAt = game->duration;
             } else if (game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 100) {
                 game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
-                ptr->building.capacity = 1000;
+                tempCapacity = 1000;
                 ptr->building.updatedAt = game->duration;
             }else if(game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 1000) {
                 game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
-                ptr->building.capacity = 1000;
+                tempCapacity = 1000;
                 ptr->building.updatedAt = game->duration;
+            }
+            int tempElectricity = game->electricityConsumed + tempCapacity;
+            // Vérifier les conditions eau
+            int tempWater = game->waterConsumed + tempCapacity;
+            if(tempElectricity <= game->electricity + tempCapacity){
+                ptr->building.capacity = tempCapacity;
+                game->electricityConsumed += tempCapacity;
+                game->waterConsumed += tempCapacity;
+            }else{
+                ptr->building.valid = false;
             }
             game->citizens += ptr->building.capacity;
             game->housesNb++;

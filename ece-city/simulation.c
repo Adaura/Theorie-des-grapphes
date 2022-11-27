@@ -33,6 +33,8 @@ void simulation_update(struct Game *game){
     game->waterTowerNb = 0;
     game->powerStationNb = 0;
     game->housesNb = 0;
+    game->electricityConsumed = 0;
+    game->waterConsumed = 0;
     if(game->currentLevel == 0){
         game->selectedBuilding = input_selectedBuilding;
     }else{

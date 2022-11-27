@@ -17,14 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.c" beforeDir="false" afterPath="$PROJECT_DIR$/assets.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.h" beforeDir="false" afterPath="$PROJECT_DIR$/assets.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecegame.c" beforeDir="false" afterPath="$PROJECT_DIR$/ecegame.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.c" beforeDir="false" afterPath="$PROJECT_DIR$/input.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,6 +96,14 @@
       <workItem from="1669369944108" duration="6906000" />
       <workItem from="1669382381283" duration="5157000" />
     </task>
+    <task id="LOCAL-00001" summary="MENU">
+      <created>1669554028696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669554028696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +122,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="MENU" />
+    <option name="LAST_COMMIT_MESSAGE" value="MENU" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

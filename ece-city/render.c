@@ -53,6 +53,7 @@ void render_init() {
     current = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
     background = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
     level0 = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
+    //Ici => charger image de fond du jeu
     render_layout(background);
     render_grid(background);
     map_init(current);
@@ -84,16 +85,16 @@ void render_indicators(BITMAP *buffer, struct Game game) {
                   mouseCoord->y + 1);
 
     //Affichage des Flouz
-    textprintf_ex(buffer, font, 400, 720, makecol(255, 0, 50), 0, "Flouz : %d", game.flouz);
+    textprintf_ex(buffer, font, 500, 720, makecol(255, 0, 50), 0, "Flouz : %06d", game.flouz);
 
     //Affichage du compteur habitants
     textprintf_ex(buffer, font, 25, 740, makecol(255, 0, 50), 0, "Habitants : %d (%d)", game.citizens, game.housesNb);
 
     //Affichage du compteur eau
-    textprintf_ex(buffer, font, 260, 740, makecol(255, 0, 50), 0, "Eau : %d (%d)", game.water, game.waterTowerNb);
+    textprintf_ex(buffer, font, 260, 740, makecol(255, 0, 50), 0, "Eau : %d/%d (%d)", game.water, game.waterConsumed, game.waterTowerNb);
 
     //Affichage du compteur éléectricité
-    textprintf_ex(buffer, font, 400, 740, makecol(255, 0, 50), 0, "Electricité : %d (%d)", game.electricity,
+    textprintf_ex(buffer, font, 500, 740, makecol(255, 0, 50), 0, "Electricité : %d/%d (%d)", game.electricity, game.electricityConsumed,
                   game.powerStationNb);
 
 }

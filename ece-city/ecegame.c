@@ -6,6 +6,7 @@
 #include "simulationvars.h"
 #include "simulation.h"
 #include "building.h"
+#include "menu.h"
 
 /* gameEndFlag:
  * Indicateur de fin de jeu
@@ -123,6 +124,7 @@ void ecegame_shutdown() {
  *  This function actually plays the game.
  */
 void ecegame_run() {
+    menu_update(&game);
     while (!gameEndFlag) {
         game.duration = counter;
         input_update();
