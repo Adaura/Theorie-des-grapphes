@@ -5,6 +5,7 @@
 #include "input.h"
 #include "simulationvars.h"
 #include "simulation.h"
+#include "building.h"
 
 /* gameEndFlag:
  * Indicateur de fin de jeu
@@ -19,6 +20,78 @@ void game_timer_callback()
 {
     counter++;
 }
+
+void loadFile(struct Game *game){
+    FILE *fp = fopen("../paris.txt", "r");
+    char ch;
+    if (fp == NULL)
+    {
+        allegro_message("pb fichier font inexistant");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+
+    }
+    char loadedMap[45][35];
+    for(int i = 0;i<35;i++){
+        for(int j = 0;j<45;j++){
+            ch=fgetc(fp);
+            if(ch == '\n'){
+                ch=fgetc(fp);
+            }
+            loadedMap[j][i] = ch;
+        }
+    }
+    int visited[GRID_NB_X][GRID_NB_Y];
+    for (int i = 0; i < GRID_NB_X; i++)
+    {
+        for (int j = 0; j < GRID_NB_Y; j++)
+        {
+            visited[i][j] = 0;
+        }
+    }
+
+    for (int i = 0; i < GRID_NB_X; i++)
+    {
+        for (int j = 0; j < GRID_NB_Y; j++)
+        {
+            if(loadedMap[i][j] == 'r'){
+                ajouterBuilding(game, i, j, ROAD);
+                visited[i][j] = 1;
+            }else if(loadedMap[i][j] == 'h'){
+                if(visited[i][j] == 0){
+                    ajouterBuilding(game, i, j, HOUSE);
+                    visited[i][j] = 1;
+                }
+                for(int k = 0;k<3;k++){
+                    for(int d = 0;d<3;d++) {
+                        visited[i + k][j + d] = 1;
+                    }
+                }
+            }else if(loadedMap[i][j] == 'w'){
+                if(visited[i][j] == 0){
+                    ajouterBuilding(game, i, j, WATER_TOWER);
+                    visited[i][j] = 1;
+                }
+                for(int k = 0;k<4;k++){
+                    for(int d = 0;d<6;d++) {
+                        visited[i + k][j + d] = 1;
+                    }
+                }
+            }else if(loadedMap[i][j] == 'e'){
+                if(visited[i][j] == 0){
+                    ajouterBuilding(game, i, j, POWER_STATION);
+                    visited[i][j] = 1;
+                }
+                for(int k = 0;k<4;k++){
+                    for(int d = 0;d<6;d++) {
+                        visited[i + k][j + d] = 1;
+                    }
+                }
+            }
+        }
+    }
+    fclose(fp);
+}
 END_OF_FUNCTION (game_timer_callback);
 LOCK_FUNCTION (game_timer_callback);
 LOCK_VARIABLE (counter);
@@ -32,8 +105,7 @@ void ecegame_init() {
     input_init();
     simulation_init(&game);
     render_init();
-    printf("### %d\n", game.flouz);
-    //objects_init();
+    loadFile(&game);
 }
 
 /* game_shutdown:

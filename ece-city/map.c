@@ -8,6 +8,7 @@
 #include "assets.h"
 #include "simulationvars.h"
 
+//initialisation de la carte
 void map_init(struct Game *game){
     int w = CASE_X * GRID_NB_X + 1;
     int h = CASE_Y * GRID_NB_Y + 1;
@@ -27,6 +28,7 @@ void map_init(struct Game *game){
     }
 }
 
+//mise  a jour de la carte
 void map_update(struct Game *game){
     //renderGrid(level0);
 
