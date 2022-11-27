@@ -14,7 +14,7 @@
 
 #define FLOUZ_INITIAL_AMOUNT 500000
 #define TAX_PER_CITIZEN 10
-#define CYCLE_DURATION 15
+#define CYCLE_DURATION 2
 
 #define ROAD_CASE_W = 1;
 #define ROAD_CASE_H = 1;
@@ -57,7 +57,7 @@ struct Building {
 struct BuildingNode {
     struct Building building;
     struct BuildingNode *next;
-} *ptr;
+};
 
 enum SELECTION_MODE {GRID, BUILDING, LEVELS};
 
@@ -80,8 +80,10 @@ struct Game {
     int citizens;
     int housesNb;
     int water;
+    int waterConsumed;
     int waterTowerNb;
     int electricity;
+    int electricityConsumed;
     int powerStationNb;
     enum building selectedBuilding;
     struct BuildingNode buildings;
