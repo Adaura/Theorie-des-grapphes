@@ -6,6 +6,7 @@
 #include "simulationvars.h"
 #include "simulation.h"
 #include "assets.h"
+#include "stdio.h"
 
 
 //ajout d un building

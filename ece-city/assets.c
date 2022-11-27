@@ -26,6 +26,7 @@ BITMAP *reload;
 BITMAP *play;
 BITMAP *stop;
 BITMAP *NewG;
+BITMAP *fonddujeu;
 
 //recuperation des bitmaps dans les fichiers
 void assets_load(){
@@ -53,6 +54,7 @@ void assets_load(){
     play=load_bitmap("../assets/play.bmp", NULL);
     NewG=load_bitmap("../assets/newG.bmp", NULL);
     ville= load_bitmap("../assets/backgroundfinal.bmp",NULL);
+    fonddujeu=load_bitmap("../assets/fonddujeu.bmp",NULL);
     if (ville == NULL) {
         allegro_message("pb bmp");
         allegro_exit();
@@ -94,6 +96,9 @@ BITMAP *getAsset(enum ASSETS asset){
     if(asset == ASSET_MENU_RELOAD) return reload;
     if(asset == ASSET_MENU_STOP) return stop;
     if(asset == ASSET_MENU_VILLE) return ville;
+
+
+    if(asset == ASSET_MENU_FONDDUJEU) return fonddujeu;
 
 }
 
