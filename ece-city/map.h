@@ -7,6 +7,7 @@
 #define gf_included_map_h
 
 #include <allegro.h>
+#include "simulationvars.h"
 
 void map_init(struct Game *game);
 void map_shutdown();
