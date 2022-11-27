@@ -29,18 +29,23 @@ enum ASSETS {
     ASSET_PALETTE_WATER_TOWER,
     ASSET_PALETTE_POWER_STATION,
     ASSET_PALETTE_FIRE_STATION,
-        };
+    //Menu
+    ASSET_MENU_CAPMODE,
+    ASSET_MENU_COMMMODE,
+    ASSET_MENU_EXIT,
+    ASSET_MENU_NEWG,
+    ASSET_MENU_OPTION,
+    ASSET_MENU_PLAY,
+    ASSET_MENU_RELOAD,
+    ASSET_MENU_STOP,
+    ASSET_MENU_VILLE,
+    ASSET_MENU_MODEJEU
+};
 
 void assets_load();
+
 BITMAP *getAsset(enum ASSETS asset);
+
 BITMAP *getAssetFromBuildingType(enum building type);
-BITMAP *ville;
-BITMAP *Exit;
-BITMAP *option;
-BITMAP *commu;
-BITMAP *capi;
-BITMAP *reload;
-BITMAP *play;
-BITMAP *stop;
-BITMAP *NewG;
+
 #endif

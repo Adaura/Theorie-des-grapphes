@@ -52,7 +52,12 @@ void assets_load(){
     reload=load_bitmap("../assets/Reload.bmp", NULL);
     play=load_bitmap("../assets/play.bmp", NULL);
     NewG=load_bitmap("../assets/newG.bmp", NULL);
-    ville= load_bitmap("../assets/ville.bmp",NULL);
+    ville= load_bitmap("../assets/backgroundfinal.bmp",NULL);
+    if (ville == NULL) {
+        allegro_message("pb bmp");
+        allegro_exit();
+        exit(0);
+    }
 }
 
 //en fonction de la bitampp on renvoi son equivalent
@@ -78,6 +83,17 @@ BITMAP *getAsset(enum ASSETS asset){
     if(asset == ASSET_PALETTE_WATER_TOWER) return boiteaOutilwaterTowerImage;
     if(asset == ASSET_PALETTE_POWER_STATION) return boiteaOutilpowerStationImage;
     if(asset == ASSET_PALETTE_FIRE_STATION) return boiteaOutilfireStation;
+
+    //Menu
+    if(asset == ASSET_MENU_CAPMODE) return capi;
+    if(asset == ASSET_MENU_COMMMODE) return commu;
+    if(asset == ASSET_MENU_EXIT) return Exit;
+    if(asset == ASSET_MENU_NEWG) return NewG;
+    if(asset == ASSET_MENU_OPTION) return option;
+    if(asset == ASSET_MENU_PLAY) return play;
+    if(asset == ASSET_MENU_RELOAD) return reload;
+    if(asset == ASSET_MENU_STOP) return stop;
+    if(asset == ASSET_MENU_VILLE) return ville;
 
 }
 

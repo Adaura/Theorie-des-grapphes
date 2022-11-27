@@ -70,8 +70,12 @@ struct Coord{
     bool selected;
 };
 
+enum GameMode {CAPITALISME, COMMUNISME};
+
 //structure regroupant les differentes structure
 struct Game {
+    enum GameMode mode;
+    bool started;
     int flouz;
     int citizens;
     int housesNb;
