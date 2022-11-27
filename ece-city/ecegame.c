@@ -21,6 +21,8 @@ void game_timer_callback()
     counter++;
 }
 
+
+
 void loadFile(struct Game *game){
     FILE *fp = fopen("../paris.txt", "r");
     char ch;

@@ -17,6 +17,15 @@ BITMAP *chantierImage;
 BITMAP *cabaneImage;
 BITMAP *immeubleImage;
 BITMAP *gratteImage;
+BITMAP *ville;
+BITMAP *Exit;
+BITMAP *option;
+BITMAP *commu;
+BITMAP *capi;
+BITMAP *reload;
+BITMAP *play;
+BITMAP *stop;
+BITMAP *NewG;
 
 //recuperation des bitmaps dans les fichiers
 void assets_load(){
@@ -35,6 +44,15 @@ void assets_load(){
     fireStation= load_bitmap("../assets/caserne.bmp", NULL);
     boiteaOutilfireStation= load_bitmap("../assets/casernepalette.bmp", NULL);
     palette=load_bitmap("../assets/palette.bmp", NULL);
+    Exit= load_bitmap("../assets/exit.bmp", NULL);
+    stop=load_bitmap("../assets/stop.bmp", NULL);
+    option=load_bitmap("../assets/option.bmp", NULL);
+    commu=load_bitmap("../assets/CommuMode.bmp", NULL);
+    capi=load_bitmap("../assets/capMode.bmp", NULL);
+    reload=load_bitmap("../assets/Reload.bmp", NULL);
+    play=load_bitmap("../assets/play.bmp", NULL);
+    NewG=load_bitmap("../assets/newG.bmp", NULL);
+    ville= load_bitmap("../assets/ville.bmp",NULL);
 }
 
 //en fonction de la bitampp on renvoi son equivalent
@@ -60,6 +78,7 @@ BITMAP *getAsset(enum ASSETS asset){
     if(asset == ASSET_PALETTE_WATER_TOWER) return boiteaOutilwaterTowerImage;
     if(asset == ASSET_PALETTE_POWER_STATION) return boiteaOutilpowerStationImage;
     if(asset == ASSET_PALETTE_FIRE_STATION) return boiteaOutilfireStation;
+
 }
 
 BITMAP *getAssetFromBuildingType(enum building type){

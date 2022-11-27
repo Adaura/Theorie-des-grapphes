@@ -23,6 +23,8 @@ void input_init() {
 void input_shutdown() {
 }
 
+
+
 struct Coord getMouseCoordOnMap() {
 }
 

@@ -34,5 +34,13 @@ enum ASSETS {
 void assets_load();
 BITMAP *getAsset(enum ASSETS asset);
 BITMAP *getAssetFromBuildingType(enum building type);
-
+BITMAP *ville;
+BITMAP *Exit;
+BITMAP *option;
+BITMAP *commu;
+BITMAP *capi;
+BITMAP *reload;
+BITMAP *play;
+BITMAP *stop;
+BITMAP *NewG;
 #endif
