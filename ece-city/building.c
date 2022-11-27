@@ -134,6 +134,9 @@ void updateBuildingState(struct Building *building, struct Game *game) {
             }
         }
     }
+    else{
+        building->valid = true;
+    }
 }
 
 bool adjacentRoad(int x, int y, struct Game *game) {
@@ -247,6 +250,11 @@ void update(struct Game *game) {
                 ptr->building.capacity = 100;
                 ptr->building.updatedAt = game->duration;
             } else if (game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 100) {
+                game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
+                ptr->building.capacity = 1000;
+                ptr->building.updatedAt = game->duration;
+            }else if(game->duration - ptr->building.updatedAt >= CYCLE_DURATION && ptr->building.capacity == 1000) {
+                game->flouz += ptr->building.capacity * TAX_PER_CITIZEN;
                 ptr->building.capacity = 1000;
                 ptr->building.updatedAt = game->duration;
             }

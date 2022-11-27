@@ -23,7 +23,7 @@ void assets_load(){
     roadImage = load_bitmap("../assets/road.bmp", NULL);
     chantierImage = load_bitmap("../assets/chantier.bmp", NULL);
     cabaneImage = load_bitmap("../assets/cabane.bmp", NULL);
-    houseImage = load_bitmap("../assets/house.bmp", NULL);
+    houseImage = load_bitmap("../assets/maison.bmp", NULL);
     immeubleImage = load_bitmap("../assets/immeuble.bmp", NULL);
     gratteImage = load_bitmap("../assets/gratte.bmp", NULL);
     boiteaOutilroadImage=load_bitmap("../assets/roadboiteaoutil.bmp", NULL);

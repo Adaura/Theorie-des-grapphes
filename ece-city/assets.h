@@ -7,6 +7,7 @@
 #define gf_included_assets_h
 
 #include <allegro.h>
+#include "simulationvars.h"
 
 //enum des differents batiments possible dans le jeu
 enum ASSETS {
@@ -31,7 +32,7 @@ enum ASSETS {
         };
 
 void assets_load();
-BITMAP *getAsset();
-BITMAP *getAssetFromBuildingType();
+BITMAP *getAsset(enum ASSETS asset);
+BITMAP *getAssetFromBuildingType(enum building type);
 
 #endif
