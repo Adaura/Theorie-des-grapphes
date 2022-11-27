@@ -53,6 +53,7 @@ void render_init() {
     current = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
     background = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
     level0 = create_bitmap(SCREEN_WIDTH, SCREEN_HEIGH);
+    masked_blit(getAsset(ASSET_MENU_FONDDUJEU),background,0, 0, 0, 0, 1024, 768);
     //Ici => charger image de fond du jeu
     render_layout(background);
     render_grid(background);

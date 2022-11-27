@@ -14,7 +14,7 @@
 
 #define FLOUZ_INITIAL_AMOUNT 500000
 #define TAX_PER_CITIZEN 10
-#define CYCLE_DURATION 2
+#define CYCLE_DURATION 15
 
 #define ROAD_CASE_W = 1;
 #define ROAD_CASE_H = 1;
