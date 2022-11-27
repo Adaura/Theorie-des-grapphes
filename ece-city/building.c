@@ -252,6 +252,7 @@ void update(struct Game *game) {
                 ptr->building.updatedAt = game->duration;
             }
             int tempElectricity = game->electricityConsumed + tempCapacity;
+            // Vérifier les conditions eau
             int tempWater = game->waterConsumed + tempCapacity;
             if(tempElectricity <= game->electricity + tempCapacity){
                 ptr->building.capacity = tempCapacity;
