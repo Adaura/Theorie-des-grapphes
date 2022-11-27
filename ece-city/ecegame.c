@@ -21,6 +21,29 @@ void game_timer_callback()
     counter++;
 }
 
+
+void loadFile2(struct Game *game) {
+    FILE *fd = fopen("../paries.txt", "r");
+
+    if (fd == NULL) {
+        allegro_message("pb fichier font inexistant");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+
+    }
+    int d;
+
+
+    fscanf(fd,"%d",&d);
+
+
+    game->duration=d;
+    fclose(fd);
+
+}
+
+
+
 void loadFile(struct Game *game){
     FILE *fp = fopen("../paris.txt", "r");
     char ch;
@@ -90,6 +113,8 @@ void loadFile(struct Game *game){
             }
         }
     }
+    ///lit les donne en bas de la mlaterice
+
     fclose(fp);
 }
 END_OF_FUNCTION (game_timer_callback);
@@ -106,6 +131,8 @@ void ecegame_init() {
     simulation_init(&game);
     render_init();
     loadFile(&game);
+    loadFile2(&game);
+
 }
 
 /* game_shutdown:
@@ -115,6 +142,8 @@ void ecegame_shutdown() {
     //objects_shutdown();
     input_shutdown();
     render_shutdown();
+    sauvegarde(game);
+
 }
 
 /* game_run:

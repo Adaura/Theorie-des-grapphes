@@ -23,6 +23,7 @@ static void run_once(){
     ecegame_init();
     ecegame_run();
     ecegame_shutdown();
+
 }
 
 int main() {

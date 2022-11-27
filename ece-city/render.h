@@ -11,6 +11,7 @@
 void render_init();
 void render_shutdown();
 void render_update(struct Game game);
+void sauvegarde(struct Game game);
 
 
 #endif

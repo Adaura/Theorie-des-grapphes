@@ -19,19 +19,12 @@
   <component name="ChangeListManager">
     <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.c" beforeDir="false" afterPath="$PROJECT_DIR$/assets.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.h" beforeDir="false" afterPath="$PROJECT_DIR$/assets.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/building.c" beforeDir="false" afterPath="$PROJECT_DIR$/building.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ece-city.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ece-city.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecegame.c" beforeDir="false" afterPath="$PROJECT_DIR$/ecegame.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paris.txt" beforeDir="false" afterPath="$PROJECT_DIR$/paris.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/render.c" beforeDir="false" afterPath="$PROJECT_DIR$/render.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation.c" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulationvars.h" beforeDir="false" afterPath="$PROJECT_DIR$/simulationvars.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render.h" beforeDir="false" afterPath="$PROJECT_DIR$/render.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projet45/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../projet45/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +73,9 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="ece-city" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ece-city" TARGET_NAME="ece-city" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ece-city" RUN_TARGET_NAME="ece-city">

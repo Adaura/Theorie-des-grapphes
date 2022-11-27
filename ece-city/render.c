@@ -219,3 +219,34 @@ void render_update(struct Game game) {
     blit(current, screen, 0, 0, 0, 0, screen->w, screen->h);
 }
 
+void sauvegarde(struct Game game)
+{
+    FILE *fp = fopen("../paris.txt", "w");
+    for (int j = 0; j < GRID_NB_Y; j++)
+    {
+        for (int i = 0; i < GRID_NB_X; i++)
+        {
+            if(game.world.level0[i][j] == ROAD)
+                fprintf(fp , "r");
+            else if(game.world.level0[i][j] == HOUSE)
+                fprintf(fp, "h");
+            else if(game.world.level0[i][j] == WATER_TOWER)
+                fprintf(fp, "w");
+            else if(game.world.level0[i][j] == POWER_STATION)
+                fprintf(fp, "e");
+            else
+                fprintf(fp, "x");
+        }
+        fprintf(fp, "\n");
+    }
+    FILE *fp1 = fopen("../paries.txt", "w+");
+
+    fprintf(fp1, "%d",game.duration);
+
+
+    fclose(fp1);
+    fclose(fp);
+}
+
+
+
