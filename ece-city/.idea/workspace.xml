@@ -18,22 +18,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b6075f-4908-4cc2-952c-ad39bef88511" name="Changes" comment="MENU">
-      <change afterPath="$PROJECT_DIR$/assets/CommMode.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Map_45x35_full_herbe.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/Reload.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/capMode.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/exit.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonddujeu.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/newG.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/option.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/play.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/stop.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.c" beforeDir="false" afterPath="$PROJECT_DIR$/assets.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.h" beforeDir="false" afterPath="$PROJECT_DIR$/assets.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/building.c" beforeDir="false" afterPath="$PROJECT_DIR$/building.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render.c" beforeDir="false" afterPath="$PROJECT_DIR$/render.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulationvars.h" beforeDir="false" afterPath="$PROJECT_DIR$/simulationvars.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/CommMode.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Reload.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/capMode.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/exit.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/newG.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/option.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/ville.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/menu.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +61,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.menu/Theorie-des-grapphes/ece-city",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adame/Documents/Travail/ECE Ing 2/Semestre 1/Theorie des graphes/Projet/V.menu/Theorie-des-grapphes/ece-city&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">

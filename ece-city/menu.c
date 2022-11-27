@@ -15,6 +15,11 @@ BITMAP *communistButton;
 BITMAP *communistButton2;
 BITMAP *modeDeJeu;
 BITMAP *ville;
+BITMAP *Rules;
+BITMAP *Rules2;
+BITMAP *page1;
+BITMAP *page2;
+BITMAP *page3;
 
 int menu2(BITMAP *buffer, int *a)///a pour charger la map
 {
@@ -30,22 +35,29 @@ int menu2(BITMAP *buffer, int *a)///a pour charger la map
     capitalistButton2 = load_bitmap("../assets/capitalistButtonUse.bmp", NULL);
     communistButton = load_bitmap("../assets/communistButtonUnuse.bmp", NULL);
     communistButton2 = load_bitmap("../assets/communistButtonUse.bmp", NULL);
+    Rules= load_bitmap("../assets/rulesButtonUnuse.bmp",NULL);
+    Rules2=load_bitmap("../assets/rulesButtonUse.bmp",NULL);
     modeDeJeu = load_bitmap("../assets/ModeDeJeu.bmp", NULL);
     ville= load_bitmap("../assets/backgroundfinal.bmp",NULL);
+    page1= load_bitmap("../assets/page1.bmp",NULL);
+    page2= load_bitmap("../assets/page2.bmp",NULL);
+    page3= load_bitmap("../assets/page3.bmp",NULL);
 
     rectfill(buffer, 0, 0, 20, 20, makecol(255, 0, 0));
     blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
-    draw_sprite(buffer, playButton, 400, 330);
-    draw_sprite(buffer, quitButton, 400, 630);
-    draw_sprite(buffer, saveButton, 400, 480);
+    draw_sprite(buffer, playButton, 400, 250);
+    draw_sprite(buffer, quitButton, 400, 615);
+    draw_sprite(buffer, saveButton, 400, 370);
+    draw_sprite(buffer,Rules,400,495);
     draw_sprite(buffer, titre, 40, 80);
     ///Curseur sur bouton play
-    if (mouse_x >= 400 && mouse_y >= 330 && mouse_x <= 622 && mouse_y <= 438) {
+    if (mouse_x >= 400 && mouse_y >= 250 && mouse_x <= 622 && mouse_y <= 358) {
         blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
         draw_sprite(buffer, titre, 40, 80);
-        draw_sprite(buffer, playButton2, 400, 342);
-        draw_sprite(buffer, quitButton, 400, 630);
-        draw_sprite(buffer, saveButton, 400, 480);
+        draw_sprite(buffer,Rules,400,495);
+        draw_sprite(buffer, playButton2, 400, 262);
+        draw_sprite(buffer, quitButton, 400, 615);
+        draw_sprite(buffer, saveButton, 400, 370);
         if (mouse_b == 1) {
             *a = 1;
             rest(250);
@@ -53,12 +65,13 @@ int menu2(BITMAP *buffer, int *a)///a pour charger la map
     }
 
     ///Curseur sur bouton save
-    if (mouse_x >= 400 && mouse_y >= 480 && mouse_x <= 622 && mouse_y <= 588) {
+    if (mouse_x >= 400 && mouse_y >= 370 && mouse_x <= 622 && mouse_y <= 478) {
         blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
         draw_sprite(buffer, titre, 40, 80);
-        draw_sprite(buffer, playButton, 400, 330);
-        draw_sprite(buffer, quitButton, 400, 630);
-        draw_sprite(buffer, saveButton2, 400, 492);
+        draw_sprite(buffer,Rules,400,495);
+        draw_sprite(buffer, playButton, 400, 250);
+        draw_sprite(buffer, quitButton, 400, 615);
+        draw_sprite(buffer, saveButton2, 400, 382);
 
         if (mouse_b == 1) {
             rest(250);
@@ -67,15 +80,28 @@ int menu2(BITMAP *buffer, int *a)///a pour charger la map
     }
 
     ///Curseur sur bouton quit
-    if (mouse_x >= 400 && mouse_y >= 630 && mouse_x <= 622 && mouse_y <= 738) {
+    if (mouse_x >= 400 && mouse_y >= 615 && mouse_x <= 622 && mouse_y <= 723) {
         blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
         draw_sprite(buffer, titre, 40, 80);
-        draw_sprite(buffer, playButton, 400, 330);
-        draw_sprite(buffer, quitButton2, 400, 642);
-        draw_sprite(buffer, saveButton, 400, 480);
+        draw_sprite(buffer,Rules,400,495);
+        draw_sprite(buffer, playButton, 400, 250);
+        draw_sprite(buffer, quitButton2, 400, 627);
+        draw_sprite(buffer, saveButton, 400, 370);
         if (mouse_b == 1) {
             allegro_exit();
             exit(0);
+        }
+    }
+    if (mouse_x >= 400 && mouse_y >= 495 && mouse_x <= 622 && mouse_y <= 603) {
+        blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
+        draw_sprite(buffer, titre, 40, 80);
+        draw_sprite(buffer, playButton, 400, 250);
+        draw_sprite(buffer, quitButton, 400, 615);
+        draw_sprite(buffer, saveButton, 400, 370);
+        draw_sprite(buffer, Rules2, 400, 507);
+        if (mouse_b == 1) {
+            *a=2;
+            rest(250);
         }
     }
 }
@@ -118,6 +144,18 @@ void menu_update(struct Game *game){
                     game->mode = CAPITALISME;
                 }
             }
+        }
+        else if(*a==2){
+            int verif;
+            blit(ville, buffer, 0, 0, 0, 0, 1024, 768);
+            draw_sprite(buffer,page1,0,0);
+            if(mouse_x>=969 && mouse_y>=727 && mouse_y<=768 && mouse_x<=1024 && mouse_b==1) {
+                draw_sprite(buffer, page2, 0, 0);
+                verif=1;
+            }
+            if(mouse_x>=969 && mouse_y>=727 && mouse_y<=768 && mouse_x<=1024 && verif==1 && mouse_b == 1)
+                draw_sprite(buffer,page3,0,0);
+
         }
         blit(buffer, screen, 0, 0, 0, 0, screen->w, screen->h);
         rest(40);
