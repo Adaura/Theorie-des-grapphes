@@ -8,7 +8,7 @@
 
 #include <allegro.h>
 
-void ajouterBuilding(struct Game *game, int x, int y);
+void ajouterBuilding(struct Game *game, int x, int y, enum building type);
 void building_init();
 void building_shutdown();
 void building_update(struct Game *game);

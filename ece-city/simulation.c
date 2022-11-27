@@ -40,7 +40,7 @@ void simulation_update(struct Game *game){
     }
     //printf("Selectoon Mode %d\n", mouseCoord->selectionMode);
     if(game->currentLevel == 0 && game->selectedBuilding != EMPTY && mouseCoord->selected == true && mouseCoord->selectionMode == GRID){
-        ajouterBuilding(game, mouseCoord->x, mouseCoord->y);
+        ajouterBuilding(game, mouseCoord->x, mouseCoord->y, game->selectedBuilding);
         game->selectedBuilding = EMPTY;
     }
 

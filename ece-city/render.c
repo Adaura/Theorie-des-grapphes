@@ -179,7 +179,12 @@ void draw_buildings(struct Game game, BITMAP* buffer){
 void debug(struct Game game, BITMAP* buffer){
     for (int i = 0; i < GRID_NB_X; i++) {
         for (int j = 0; j < GRID_NB_Y; j++) {
-            textprintf_ex(buffer,font,i*CASE_X + 5,j*CASE_Y + 5,makecol(255,0,50),0,"%d", game.world.level0[i][j]);
+            if(game.currentLevel == 0)
+                textprintf_ex(buffer,font,i*CASE_X + 5,j*CASE_Y + 5,makecol(255,0,50),0,"%d", game.world.level0[i][j]);
+            if(game.currentLevel == 1)
+                textprintf_ex(buffer,font,i*CASE_X + 5,j*CASE_Y + 5,makecol(255,0,50),0,"%d", game.world.level_1[i][j]);
+            if(game.currentLevel == 2)
+                textprintf_ex(buffer,font,i*CASE_X + 5,j*CASE_Y + 5,makecol(255,0,50),0,"%d", game.world.level_2[i][j]);
         }
     }
 }
